@@ -1,0 +1,83 @@
+{
+  "coconutAvengers": [
+    {
+      "id": 0,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 1,
+      "name": "Sally",
+      "color": "yellow"
+    },
+    {
+      "id": 2,
+      "name": "Trini",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "name": "Bean",
+      "color": "blue"
+    },
+    {
+      "id": 4,
+      "name": "Raisin",
+      "color": "pink"
+    }
+  ],
+  "soggyPillows": [
+    {
+      "id": 0,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 1,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 3,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 4,
+      "name": "Bob",
+      "color": "red"
+    }
+  ],
+  "tickleElves": [
+    {
+      "id": 0,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 1,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 3,
+      "name": "Bob",
+      "color": "red"
+    },
+    {
+      "id": 4,
+      "name": "Bob",
+      "color": "red"
+    }
+  ]
+}
