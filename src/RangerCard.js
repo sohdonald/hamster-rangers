@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
 function RangerCard() {
+
+    useEffect(() => {
+        fetch(`http://localhost:4000/${rangerTeam}`)
+        .then((r) => r.json)
+        .then((rangers)=> setRangers(rangers))
+      }, []);
+      
     const [isCardHidden, setIsCardHidden] = useState(false);
     
     const {name, color} = ranger;

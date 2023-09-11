@@ -7,11 +7,35 @@ function AssembleRangers() {
  const [rangers, setRangers] = useState([]);
 
     useEffect(() => {
-        fetch()
+        fetch(`http://localhost:4000/coconutAvengers`)
         .then((r) => r.json)
-        .then((rangers)=> console.log(rangers))
+        .then((rangers)=> setRangers(rangers))
       }, []);
-      
+
+      useEffect(() => {
+        fetch(`http://localhost:4000/soggyPillows`)
+        .then((r) => r.json)
+        .then((rangers)=> setRangers(rangers))
+      }, []);
+
+      useEffect(() => {
+        fetch(`http://localhost:4000/tickleElves`)
+        .then((r) => r.json)
+        .then((rangers)=> setRangers(rangers))
+      }, []);
+
+  function renderRangers(url, rangerName, rangerColor) {
+    useEffect(() => {fetch(url, {
+    body:JSON.stringify({
+        name: rangerName,
+        color: rangerColor,
+    }),
+  }) //fetch ends
+  .then((r) => r.json)
+  .then((rangers)=> setRangers(rangers))
+  }, []);
+
+
 //const rangerDisplay = rangers;
     return (
         <div>
