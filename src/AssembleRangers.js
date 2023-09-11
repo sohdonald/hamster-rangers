@@ -34,7 +34,7 @@ function AssembleRangers() {
   .then((r) => r.json)
   .then((rangers)=> setRangers(rangers))
   }, []);
-
+  }
 
 //const rangerDisplay = rangers;
     return (
