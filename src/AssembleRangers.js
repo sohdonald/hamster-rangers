@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import RangerCard from "./RangerCard";
 
 function AssembleRangers() {
     // combine all the rangers from rangerRoster into one large array
     // converts the json into something we can work with
+ const [rangers, setRangers] = useState([]);
 
+    useEffect(() => {
+        fetch()
+        .then((r) => r.json)
+        .then((rangers)=> console.log(rangers))
+      }, []);
+      
 //const rangerDisplay = rangers;
     return (
         <div>

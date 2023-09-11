@@ -3,11 +3,11 @@ import AssembleRangers from "./AssembleRangers";
 
 function App() {
   
-  useEffect(() => {
-    fetch()
-    .then
-    .then
-  })
+  // useEffect(() => {
+  //   fetch()
+  //   .then
+  //   .then
+  // })
   
 
   return (
