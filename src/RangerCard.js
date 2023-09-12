@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 
 function RangerCard({ rangerColor, rangerName }) {
-  const [isCardHidden, setIsCardHidden] = useState(false);
+  // seperate useState for counter
+  const [rangerCount, setRangerCount] = useState(0);
 
-  if (isCardHidden) {
-    return null;
+  const [isSelectHidden, setIsSelectHidden] = useState(false);
+
+    let element = document.getElementsByClassName("ui button")
+  if (isSelectHidden) {
+    element.remove()
   }
 
+  function toggleRanger() {
+    setRangerCount(rangerCount+1);
+    setIsSelectHidden(true)
+  }
   return (
     <div className="card">
       <h3>name:{rangerName}</h3>
       <div>color:{rangerColor}</div>
-      <button
-        className="ui button"
-        onClick={() => setIsCardHidden(true)}
-      ></button>
+      <button className="ui button" onClick={toggleRanger}>
+        select
+      </button>
+      <div>count: {rangerCount}</div>
     </div>
   );
 }

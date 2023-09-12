@@ -41,6 +41,7 @@ function AssembleRangers() {
             one object in new array would be a rangerCard 
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
+      <div>count</div>
       <h2>Coconut Avengers</h2>
       {coconuts.map((ranger) => {
         return (

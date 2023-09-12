@@ -1,5 +1,6 @@
 import React, { useState} from "react";
 import AssembleRangers from "./AssembleRangers";
+import SelectRangers from "./SelectRangers";
 
 function App() {
   return (
