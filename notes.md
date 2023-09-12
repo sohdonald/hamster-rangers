@@ -4,6 +4,28 @@ It's up to the Hamster Rangers to thwart her ambitions and save the planet.
 
 Hamster rangers can mix and match to summon different megazords
 
+select 5 rangers from the db.json
+rangers are displayed in thumbnail gallery
+thumbnail displays a ranger's picture, name, and color
+the thumbnails are buttons that we can click
+click on the thumbnail of the ranger to select them
+
+after 5 different rangers are selected, the "summon megazord"
+button appears
+
+by pressing that button, a megazord is summon based on which rangers were selected
+
+mixing and matching different rangers lead to different megazords
+
+look at Gerbil Army lab
+look at zombie hamsters
+step 1, create db.json file
+step 2, create local server
+step 3, fetch from that file
+render all the rangers in the gallery
+need map function
+
+
 three teams
 1. Coconut Avengers
 2. Soggy Pillows
