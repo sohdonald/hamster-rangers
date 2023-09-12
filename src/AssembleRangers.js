@@ -11,21 +11,21 @@ function AssembleRangers() {
   useEffect(() => {
     fetch(`http://localhost:4000/coconutAvengers`)
       .then((r) => r.json())
-      .then((rangersJson) => setCoconuts(rangersJson)); 
-      // setRangers set the current state of rangers to rangersJson
+      .then((rangersJson) => setCoconuts(rangersJson));
+    // setRangers set the current state of rangers to rangersJson
   }, []);
 
-   useEffect(() => {
-     fetch(`http://localhost:4000/soggyPillows`)
-     .then((r) => r.json())
-     .then((soggyJson)=> setSoggies(soggyJson))
-   }, []);
+  useEffect(() => {
+    fetch(`http://localhost:4000/soggyPillows`)
+      .then((r) => r.json())
+      .then((soggyJson) => setSoggies(soggyJson));
+  }, []);
 
-   useEffect(() => {
-     fetch(`http://localhost:4000/tickleElves`)
-     .then((r) => r.json())
-     .then((tickJson)=> setTicklers(tickJson))
-   }, []);
+  useEffect(() => {
+    fetch(`http://localhost:4000/tickleElves`)
+      .then((r) => r.json())
+      .then((tickJson) => setTicklers(tickJson));
+  }, []);
 
   //const rangerDisplay = rangers;
   return (
@@ -41,17 +41,20 @@ function AssembleRangers() {
             one object in new array would be a rangerCard 
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
+      <h2>Coconut Avengers</h2>
       {coconuts.map((ranger) => {
         return (
           <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
         );
       })}
-       {soggies.map((ranger) => {
+      <h2>Soggy Pillows</h2>
+      {soggies.map((ranger) => {
         return (
           <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
         );
       })}
-       {ticklers.map((ranger) => {
+      <h2>Tickle Elves</h2>
+      {ticklers.map((ranger) => {
         return (
           <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
         );

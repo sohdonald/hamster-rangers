@@ -29,55 +29,87 @@
   "soggyPillows": [
     {
       "id": 0,
-      "name": "Bob",
+      "name": "Panpan",
       "color": "red"
     },
     {
       "id": 1,
-      "name": "Bob",
-      "color": "red"
+      "name": "Lick",
+      "color": "blue"
     },
     {
       "id": 2,
-      "name": "Bob",
-      "color": "red"
+      "name": "Stubby",
+      "color": "yellow"
     },
     {
       "id": 3,
-      "name": "Bob",
-      "color": "red"
+      "name": "Minty",
+      "color": "green"
     },
     {
       "id": 4,
-      "name": "Bob",
-      "color": "red"
+      "name": "Waifu",
+      "color": "pink"
     }
   ],
   "tickleElves": [
     {
       "id": 0,
-      "name": "Bob",
+      "name": "Pine Nut",
       "color": "red"
     },
     {
       "id": 1,
-      "name": "Bob",
-      "color": "red"
+      "name": "Ajax",
+      "color": "blue"
     },
     {
       "id": 2,
-      "name": "Bob",
-      "color": "red"
+      "name": "Gus",
+      "color": "yellow"
     },
     {
       "id": 3,
-      "name": "Bob",
-      "color": "red"
+      "name": "Mandy",
+      "color": "green"
     },
     {
       "id": 4,
-      "name": "Bob",
-      "color": "red"
+      "name": "Nibbles",
+      "color": "pink"
+    }
+  ],
+  "megazords": [
+    {
+      "id": 0,
+      "name": "Bloody Banana",
+      "summonBy": "recruit 3 red rangers and 2 yellow rangers"
+    },
+    {
+      "id": 1,
+      "name": "Pink Lemonade",
+      "summonBy": "recruit 2 pink rangers, 1 blue, 1 yellow"
+    },
+    {
+      "id": 2,
+      "name": "Sock Monkey Vengence",
+      "summonBy": "recruit all rangers from Coconut Avengers"
+    },
+    {
+      "id": 3,
+      "name": "King Sized Mattress",
+      "summonBy": "recruit all rangers from Soggy Pillows"
+    },
+    {
+      "id": 4,
+      "name": "Santa Tickler",
+      "summonBy": "recruit all rangers from Tickle Elves"
+    },    
+    {
+      "id": 5,
+      "name": "Coconut Christmas",
+      "summonBy": "recruit rangers from Tickle Elves and Coconut Avengers"
     }
   ]
 }
