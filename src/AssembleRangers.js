@@ -15,17 +15,17 @@ function AssembleRangers() {
       // setRangers set the current state of rangers to rangersJson
   }, []);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:4000/soggyPillows`)
-  //   .then((r) => r.json())
-  //   .then((rangers)=> setRangers(rangers))
-  // }, []);
+   useEffect(() => {
+     fetch(`http://localhost:4000/soggyPillows`)
+     .then((r) => r.json())
+     .then((soggyJson)=> setSoggies(soggyJson))
+   }, []);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:4000/tickleElves`)
-  //   .then((r) => r.json())
-  //   .then((rangers)=> setRangers(rangers))
-  // }, []);
+   useEffect(() => {
+     fetch(`http://localhost:4000/tickleElves`)
+     .then((r) => r.json())
+     .then((tickJson)=> setTicklers(tickJson))
+   }, []);
 
   //const rangerDisplay = rangers;
   return (
@@ -42,6 +42,16 @@ function AssembleRangers() {
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
       {coconuts.map((ranger) => {
+        return (
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
+        );
+      })}
+       {soggies.map((ranger) => {
+        return (
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
+        );
+      })}
+       {ticklers.map((ranger) => {
         return (
           <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
         );
