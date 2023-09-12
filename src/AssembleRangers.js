@@ -13,17 +13,17 @@ function AssembleRangers() {
         .then((rangers)=> setRangers(rangers))
       }, []);
 
-      useEffect(() => {
-        fetch(`http://localhost:4000/soggyPillows`)
-        .then((r) => r.json())
-        .then((rangers)=> setRangers(rangers))
-      }, []);
+      // useEffect(() => {
+      //   fetch(`http://localhost:4000/soggyPillows`)
+      //   .then((r) => r.json())
+      //   .then((rangers)=> setRangers(rangers))
+      // }, []);
 
-      useEffect(() => {
-        fetch(`http://localhost:4000/tickleElves`)
-        .then((r) => r.json())
-        .then((rangers)=> setRangers(rangers))
-      }, []);
+      // useEffect(() => {
+      //   fetch(`http://localhost:4000/tickleElves`)
+      //   .then((r) => r.json())
+      //   .then((rangers)=> setRangers(rangers))
+      // }, []);
 
 //const rangerDisplay = rangers;
     return (
@@ -39,7 +39,7 @@ function AssembleRangers() {
             one object in new array would be a rangerCard 
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
-           {rangers.map((ranger) => {return <RangerCard/>})}
+           {rangers.map((ranger) => {return <RangerCard rangerName={ranger.name} rangerColor={ranger.color}/>})}
         </div>
     )
 }
