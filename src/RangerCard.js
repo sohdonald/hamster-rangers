@@ -15,13 +15,16 @@ function RangerCard({ rangerColor, rangerName }) {
 // we should make a ternary that switches from select and deselect
 // selectRanger ? "select":"deselect"
 const [selectRanger, setSelectRanger] = useState("select")
-  
+  console.log(setSelectRanger) //setSelectRanger is function
 function handleSelectRanger() {
-  if (setSelectRanger("select")) {
-    setSelectRanger("deselect")
-  } else {
-    setSelectRanger("select")
-  }
+setSelectRanger(selectRanger === "deselect" ? "select":"deselect");
+// the condition selectRanger === "deselect" evaluates to true or false
+// left hand side of ? is the condition we are checking
+// right hand side of ? is the output
+// left hand side of : is the value returned when the condition is true
+// right hand side of : is the value returned when the condition is false
+// if true, then the state changes to "select"
+// false, state changes to "deselect"
 }
 
   function countRanger() {
