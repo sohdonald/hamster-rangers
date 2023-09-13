@@ -29,7 +29,6 @@ setSelectRanger(selectRanger === "deselect" ? "select":"deselect");
 
   function countRanger() {
     setRangerCount(rangerCount+1);
-   // setIsSelectHidden(true)
   }
 
   return (
