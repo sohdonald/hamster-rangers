@@ -27,7 +27,6 @@ function AssembleRangers() {
       .then((tickJson) => setTicklers(tickJson));
   }, []);
 
-  //const rangerDisplay = rangers;
   return (
     <div>
       Recruit 5 rangers
@@ -41,6 +40,8 @@ function AssembleRangers() {
             one object in new array would be a rangerCard 
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
+
+
       <div>count</div>
       <h2>Coconut Avengers</h2>
       {coconuts.map((ranger) => {

@@ -3,81 +3,96 @@
     {
       "id": 0,
       "name": "Bob",
-      "color": "red"
+      "color": "red",
+      "isSelected": false
     },
     {
       "id": 1,
       "name": "Sally",
-      "color": "yellow"
+      "color": "yellow",
+      "isSelected": false
     },
     {
       "id": 2,
       "name": "Trini",
-      "color": "green"
+      "color": "green",
+      "isSelected": false
     },
     {
       "id": 3,
       "name": "Bean",
-      "color": "blue"
+      "color": "blue",
+      "isSelected": false
     },
     {
       "id": 4,
       "name": "Raisin",
-      "color": "pink"
+      "color": "pink",
+      "isSelected": false
     }
   ],
   "soggyPillows": [
     {
       "id": 0,
       "name": "Panpan",
-      "color": "red"
+      "color": "red",
+      "isSelected": false
     },
     {
       "id": 1,
       "name": "Lick",
-      "color": "blue"
+      "color": "blue",
+      "isSelected": false
     },
     {
       "id": 2,
       "name": "Stubby",
-      "color": "yellow"
+      "color": "yellow",
+      "isSelected": false
     },
     {
       "id": 3,
       "name": "Minty",
-      "color": "green"
+      "color": "green",
+      "isSelected": false
     },
     {
       "id": 4,
       "name": "Waifu",
-      "color": "pink"
+      "color": "pink",
+      "isSelected": false
     }
   ],
   "tickleElves": [
     {
       "id": 0,
       "name": "Pine Nut",
-      "color": "red"
+      "color": "red",
+      "isSelected": false
     },
     {
       "id": 1,
       "name": "Ajax",
-      "color": "blue"
+      "color": "blue",
+      "isSelected": false
     },
     {
       "id": 2,
       "name": "Gus",
-      "color": "yellow"
+      "color": "yellow",
+      "isSelected": false
     },
     {
       "id": 3,
       "name": "Mandy",
-      "color": "green"
+      "color": "green",
+      "isSelected": false
     },
     {
       "id": 4,
       "name": "Nibbles",
-      "color": "pink"
+      "color": "pink",
+      "isSelected": false
     }
   ],
   "megazords": [
