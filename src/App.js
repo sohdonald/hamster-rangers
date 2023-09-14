@@ -13,10 +13,14 @@ function App() {
     setCountDown(countDown - 1);
   }
 
+  function handleCountUp() {
+    setCountDown(countDown + 1)
+  }
+
   return (
     <div className="App">
       <SelectRangers onCountDown={countDown}/>
-      <AssembleRangers />
+      <AssembleRangers onCountDown={handleCountDown} onCountUp={handleCountUp}/>
       
     </div>
   );

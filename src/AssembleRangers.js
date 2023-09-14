@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import RangerCard from "./RangerCard";
 
-function AssembleRangers() {
+function AssembleRangers({onCountDown, onCountUp}) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
   const [coconuts, setCoconuts] = useState([]);
   const [soggies, setSoggies] = useState([]);
   const [ticklers, setTicklers] = useState([]);
+
+  console.log(onCountDown)
 
   useEffect(() => {
     fetch(`http://localhost:4000/coconutAvengers`)
@@ -29,7 +31,6 @@ function AssembleRangers() {
 
   return (
     <div>
-      Recruit 5 rangers
       {/* should show a bunch of ranger cards for
             us to select, is when we recruit, the text should be
             updated with the remaining number of rangers that are needed to
@@ -41,24 +42,22 @@ function AssembleRangers() {
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
 
-
-      <div>count</div>
       <h2>Coconut Avengers</h2>
       {coconuts.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp}/>
         );
       })}
       <h2>Soggy Pillows</h2>
       {soggies.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp}/>
         );
       })}
       <h2>Tickle Elves</h2>
       {ticklers.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} />
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp}/>
         );
       })}
     </div>
