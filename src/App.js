@@ -8,7 +8,7 @@ function App() {
   const [countDown, setCountDown] = useState(5);
   console.log(countDown) // displays 5
   // the number is not displaying
-
+  // this state makes the number of rangers we selected dynamic
   function handleCountDown() {
     setCountDown(countDown - 1);
   }
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <SelectRangers onCountDown={countDown}/>
-      <AssembleRangers onCountDown={handleCountDown} onCountUp={handleCountUp}/>
+      <AssembleRangers onCountDown={handleCountDown} onCountUp={handleCountUp} countDown={countDown}/>
       
     </div>
   );

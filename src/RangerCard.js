@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
-function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp }) {
+function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown }) {
   // seperate useState for counter
   const [rangerCount, setRangerCount] = useState(0);
-  console.log(onCountDown)
-  console.log(onCountUp)
+  console.log(onCountDown);
+  console.log(onCountUp);
 
   const [selectRanger, setSelectRanger] = useState("select");
   //setSelectRanger is function
+  console.log(selectRanger); // outputs "select"
+
   function handleSelectRanger() {
     // we should make a ternary that switches from select and deselect
     setSelectRanger(selectRanger === "deselect" ? "select" : "deselect");
@@ -17,23 +19,34 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp }) {
     // left hand side of : is the value returned when the condition is true
     // right hand side of : is the value returned when the condition is false
     // if true, then the state changes to "select"
-    // false, state changes to "deselect"
+    // false, state changes to "deselect
 
-    //we need an else if
-    if (selectRanger === "select") {
-      onCountDown();
-    } else {
+    if (selectRanger === "select" && countDown >= 1) {
+      onCountDown(); // stops substracting after we reach -1, why?
+      // onCountdown = countDown - 1
+      // what's 0 - 1 = -1
+    } else if (selectRanger === "deselect") {
       // we need to check 2 conditions
       // 1. selectRanger = "deselect"
-      // 2. count >= 0
+      // 2. count <= 5
+
+      // selectRanger==="deselect" && count >= 0
+
       // selectRanger === "deselect" is first condition
       // && checks if both conditions are true
-      
+      // count is a place holder of the number of rangers with the state of "deselect"
+
+      /* onCountDown() >= 0 doesn't work
+        onCountDown() is a function
+        they don't hold the value
+        
+      */
+
       // clicking deselect adds the count to 1 to countDown
-      // have the condition of onCountDown >= 0 
+      // have the condition of onCountDown >= 0
       // const countUp =  + 1
       // can't be less than 0
-      onCountUp();
+      onCountUp();  
     }
   }
 
@@ -52,8 +65,8 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp }) {
 
   return (
     <div className="card">
-      <h3>name:{rangerName}</h3>
-      <div>color:{rangerColor}</div>
+      <h3>name: {rangerName}</h3>
+      <div>color: {rangerColor}</div>
       <button className="ui button" onClick={countRanger}>
         count: {rangerCount}
       </button>

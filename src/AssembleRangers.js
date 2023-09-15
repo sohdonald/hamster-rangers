@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RangerCard from "./RangerCard";
 
-function AssembleRangers({onCountDown, onCountUp}) {
+function AssembleRangers({onCountDown, onCountUp, countDown}) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
   const [coconuts, setCoconuts] = useState([]);
@@ -45,19 +45,19 @@ function AssembleRangers({onCountDown, onCountUp}) {
       <h2>Coconut Avengers</h2>
       {coconuts.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp}/>
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );
       })}
       <h2>Soggy Pillows</h2>
       {soggies.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp}/>
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );
       })}
       <h2>Tickle Elves</h2>
       {ticklers.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp}/>
+          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );
       })}
     </div>
