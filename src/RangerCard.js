@@ -24,7 +24,7 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown
     if (selectRanger === "select" && countDown >= 1) {
       onCountDown(); // stops substracting after we reach -1, why?
       // onCountdown = countDown - 1
-      // what's 0 - 1 = -1
+      // 0 - 1 = -1
     } else if (selectRanger === "deselect") {
       // we need to check 2 conditions
       // 1. selectRanger = "deselect"

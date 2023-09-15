@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <SelectRangers onCountDown={countDown}/>
       <AssembleRangers onCountDown={handleCountDown} onCountUp={handleCountUp} countDown={countDown}/>
-      
+      <SummonMegazord />
     </div>
   );
 }
