@@ -28,17 +28,17 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown
     } else if (selectRanger === "deselect") {
       // we need to check 2 conditions
       // 1. selectRanger = "deselect"
-      // 2. count <= 5
+      // 2. count >= 0
 
       // selectRanger==="deselect" && count >= 0
 
       // selectRanger === "deselect" is first condition
       // && checks if both conditions are true
-      // count is a place holder of the number of rangers with the state of "deselect"
+      // count is a place holder of the number of rangers we selected
 
       /* onCountDown() >= 0 doesn't work
         onCountDown() is a function
-        they don't hold the value
+        they don't hold the value we need
         
       */
 
