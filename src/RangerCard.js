@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SummonMegazord from "./SummonMegazord";
 
 function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown }) {
   // seperate useState for counter
@@ -74,6 +75,7 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown
         {/* how do we decrease the number displayed in SelectRangers with this button? */}
         {selectRanger}
       </button>
+      <SummonMegazord rangerColor={rangerColor} rangerName={rangerName} countDown={countDown}/>
     </div>
   );
 }

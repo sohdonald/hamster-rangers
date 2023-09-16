@@ -29,36 +29,74 @@ switch (order) {
 
 */
 
-const Megazord = "Fuzzy Sock Monkey";
+import React from "react";
 
-let rangers;
 
+function SummonMegazord({rangerColor, rangerName, countDown}) {
+
+let Megazord;
+// how do we make the value dynamic?
+
+console.log(rangerColor) // it's console logging each ranger's color
+console.log(rangerName) // console logging each ranger's name
+console.log(countDown)
+
+/** we need to convert the arrays in rangerName and rangerColor
+ * into string arrays like this
+ * rangerName = ["Bob", "Sally", "Trini", "Bean", "Raisin"]
+*/
+
+function handleMegazord() {
 switch (Megazord) {
   case `Fuzzy Sock Monkey`:
-    rangers = `Bob, Sally, Trini, Bean, Raisin`;
+    rangerName = ["Bob", "Sally", "Trini", "Bean", "Raisin"];
     break;
   case `King Sized Bed`:
-    rangers = `Panpan, Lick, Stubby, Minty, Waifu`;
+    rangerName = `Panpan, Lick, Stubby, Minty, Waifu`;
     break;
   case `Santa Tickler`:
-    rangers = `Pine Nut, Ajax, Gus, Mandy, Nibbles`;
+    rangerName = `Pine Nut, Ajax, Gus, Mandy, Nibbles`;
     break;
   case `Bloody Banana`:
-    rangers = `red, red, red, yellow, yellow`;
+    rangerColor = `red, red, red, yellow, yellow`;
     break;
   case `Pink Lemonade`:
-    rangers = `pink, pink, pink, blue, yellow`;
+    rangerColor = `pink, pink, pink, blue, yellow`;
     break;
   case `Super Sour`:
-    rangers = `yellow, yellow, yellow, red, pink`;
+    rangerColor = `yellow, yellow, yellow, red, pink`;
     break;
   case `Boring Suitcase`:
-    rangers = `blue,blue,blue,yellow,red`;
+    rangerColor = `blue,blue,blue,yellow,red`;
     break;
   default:
     console.log(`Cheap Knockoff`);
     break;
 }
+}
+
+function handleMegazordButton() {
+  if (countDown === 0) {
+    return handleMegazord();
+  }
+}
+
+return (
+  <div>
+    <button onClick={handleMegazordButton}>Summon Megazord</button>
+    <h2>{handleMegazordButton}</h2> 
+    {/* we are really close to figuring this out
+    we know that the handleMegazordButton is working like it should
+    and we are getting ONE of the OPERATIONS from the switch EXECUTED
+     
+    Now we need to figure out how to get the other operations to execute
+     */}
+  </div>
+);
+
+}
+
+export default SummonMegazord;
 
 /* the switch statement allows us to make multiple cases
     each case has their own set of conditions 
@@ -71,9 +109,10 @@ switch (Megazord) {
     What happens when statements are 'executed'?
     What does 'executed' mean in this case?
 
-    The 'executed' statements are turned into operations that the computer operate, what it does
-    We are telling the computer to check the value of the Megazord expression and
-    perform the operation that is defined in the statements contained in the matching case clause
+    The 'executed' statements are turned into OPERATIONS that the computer can operate.  
+    When statements are 'executed', the operations tell the computer WHAT TO DO.
+    We are TELLING the computer to CHECK THE VALUE of the Megazord EXPRESSION and
+    PERFORM THE OPERATION that is DEFINED IN THE STATEMENTS contained in the MATCHING CASE CLAUSE
 */
 
 /** the statements in rangers are strings,
