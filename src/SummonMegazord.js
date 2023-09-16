@@ -63,12 +63,27 @@ switch (Megazord) {
 /* the switch statement allows us to make multiple cases
     each case has their own set of conditions 
     the case 'Fuzzy Sock Monkey' is checking the Megazord variable. 
-    If it matches, the statements in rangers below the case are executed
+    
+    The Megazord variable is the EXPRESSION and the expression's VALUE
+    is being checked by the case clauses.
+
+    If the VALUE matches any of the case clauses, the statements in rangers below the matching case are executed
+    What happens when statements are 'executed'?
+    What does 'executed' mean in this case?
+
+    The 'executed' statements are turned into operations that the computer operate, what it does
+    We are telling the computer to check the value of the Megazord expression and
+    perform the operation that is defined in the statements contained in the matching case clause
 */
 
 /** the statements in rangers are strings,
  *  but the data we need are keys from objects
- * So we need to 'stringify' that data 
+ * So we need to convert this data 
+ * 
+ * didn't we already convert this data in AssembleRangers
+ * How do we pass it down here?
+ * 
+ * rangerColor and rangerName are the props we need
  * 
  * Even that would not be enough
  * How would the 'stringified' data know to check if the statements match?
@@ -82,7 +97,9 @@ switch (Megazord) {
  * it would be confusing if we have to do something like this
  * rangers = `rangers.color===red && rangers.color===yellow && rangers.color===green...`
  * besides, this wouldn't work anyway because it would only output objects that matches ALL these conditions 
- * instead of assigning a different 'check' for each ranger we selected
+ * instead of ASSIGNING a different 'check' FOR EACH ranger we selected
  * 
  * there's gotta be a way to check and match data that doesn't look confusing
  */
+
+// currently, the Megazord expression's value is static.  We need to make it dynamic
