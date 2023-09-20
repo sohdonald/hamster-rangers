@@ -1,13 +1,15 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import AssembleRangers from "./AssembleRangers";
 import SelectRangers from "./SelectRangers";
-
+import { Route, Switch } from "react-router-dom";
+import NewRangerForm from "./NewRangerForm";
+import NavBar from "./NavBar";
 
 // need to declare countDown state to every component that needs it
 
 function App() {
   const [countDown, setCountDown] = useState(5);
-  console.log(countDown) // displays 5
+  console.log(countDown); // displays 5
   // the number is not displaying
   // this state makes the number of rangers we selected dynamic
   function handleCountDown() {
@@ -15,22 +17,33 @@ function App() {
   }
 
   function handleCountUp() {
-    setCountDown(countDown + 1)
+    setCountDown(countDown + 1);
   }
 
   return (
     <div className="App">
-      <SelectRangers onCountDown={countDown}/>
-      <AssembleRangers onCountDown={handleCountDown} onCountUp={handleCountUp} countDown={countDown}/>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <SelectRangers onCountDown={countDown} />
+          <AssembleRangers
+            onCountDown={handleCountDown}
+            onCountUp={handleCountUp}
+            countDown={countDown}
+          />
+        </Route>
+        <Route exact path="/newrangerform">
+            <NewRangerForm />
+        </Route>
+      </Switch>
     </div>
   );
 }
 
-
-/** App is the main parent component 
+/** App is the main parent component
  * SelectRangers, AssembleRangers and SummonMegazord are sibling components
  * sibling components share props, but don't have each other in return ()
  * RangerCard is the child of AssembleRangers
  * SummonMegazord is the child of RangerCard
-*/
+ */
 export default App;

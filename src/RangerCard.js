@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import SummonMegazord from "./SummonMegazord";
 
-function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown }) {
+function RangerCard({
+  rangerColor,
+  rangerName,
+  onCountDown,
+  onCountUp,
+  countDown,
+}) {
   // seperate useState for counter
-  const [rangerCount, setRangerCount] = useState(0);
+
   console.log(onCountDown);
   console.log(onCountUp);
 
@@ -47,9 +53,15 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown
       // have the condition of onCountDown >= 0
       // const countUp =  + 1
       // can't be less than 0
-      onCountUp();  
+      onCountUp();
     }
   }
+
+// [..., handleSelectRanger]
+// need the selected rangers' names and colors
+// doesn't have this info at the beginning
+// we need to create this array with existing data
+// we need useState
 
   console.log(onCountDown); // this is undefined, it's not misspelled
   // each rangerCard is outputting this console log, NOT just outputting it once
@@ -60,22 +72,23 @@ function RangerCard({ rangerColor, rangerName, onCountDown, onCountUp, countDown
   Then have onCountDown increase by 1 with each select button set as "select", max at 5
   */
 
-  function countRanger() {
-    setRangerCount(rangerCount + 1);
-  }
+  // function countRanger() {
+  //   setRangerCount(rangerCount + 1);
+  // }
 
   return (
     <div className="card">
       <h3>name: {rangerName}</h3>
       <div>color: {rangerColor}</div>
-      <button className="ui button" onClick={countRanger}>
-        count: {rangerCount}
-      </button>
       <button className="select button" onClick={handleSelectRanger}>
         {/* how do we decrease the number displayed in SelectRangers with this button? */}
         {selectRanger}
       </button>
-      <SummonMegazord rangerColor={rangerColor} rangerName={rangerName} countDown={countDown}/>
+      <SummonMegazord
+        rangerColor={rangerColor}
+        rangerName={rangerName}
+        countDown={countDown}
+      />
     </div>
   );
 }

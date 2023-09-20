@@ -30,7 +30,7 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
   }, []);
 
   return (
-    <div>
+    <div >
       {/* should show a bunch of ranger cards for
             us to select, is when we recruit, the text should be
             updated with the remaining number of rangers that are needed to
@@ -45,19 +45,19 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
       <h2>Coconut Avengers</h2>
       {coconuts.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
+          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );
       })}
       <h2>Soggy Pillows</h2>
       {soggies.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
+          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );
       })}
       <h2>Tickle Elves</h2>
       {ticklers.map((ranger) => {
         return (
-          <RangerCard rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
+          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );
       })}
     </div>

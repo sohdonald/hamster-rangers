@@ -34,25 +34,33 @@ import React from "react";
 
 function SummonMegazord({rangerColor, rangerName, countDown}) {
 
-let Megazord;
+let selectedRangers;
+let megazord;
 // how do we make the value dynamic?
 
-console.log(rangerColor) // it's console logging each ranger's color
-console.log(rangerName) // console logging each ranger's name
-console.log(countDown)
+ console.log(rangerColor) // it's console logging each ranger's color
+ console.log(rangerName) // console logging each ranger's name
+// console.log(countDown)
 
 /** we need to convert the arrays in rangerName and rangerColor
  * into string arrays like this
  * rangerName = ["Bob", "Sally", "Trini", "Bean", "Raisin"]
+ * 
+ * [..., rangerName]
+ * 
+ * case ["Bob", "Sally", "Trini", "Bean", "Raisin"]:
+    Megazord = `Fuzzy Sock Monkey`
+    break;
+ * 
 */
 
 function handleMegazord() {
-switch (Megazord) {
-  case `Fuzzy Sock Monkey`:
-    rangerName = ["Bob", "Sally", "Trini", "Bean", "Raisin"];
+switch (selectedRangers) {
+  case ["Bob", "Sally", "Trini", "Bean", "Raisin"]:
+    megazord = 'Fuzzy Sock Monkey';
     break;
-  case `King Sized Bed`:
-    rangerName = `Panpan, Lick, Stubby, Minty, Waifu`;
+  case [`Panpan, Lick, Stubby, Minty, Waifu`]:
+    rangerName = `King Sized Bed`;
     break;
   case `Santa Tickler`:
     rangerName = `Pine Nut, Ajax, Gus, Mandy, Nibbles`;
@@ -76,15 +84,16 @@ switch (Megazord) {
 }
 
 function handleMegazordButton() {
+  console.log("countDown", countDown)
   if (countDown === 0) {
-    return handleMegazord();
+    handleMegazord();
   }
 }
 
 return (
   <div>
     <button onClick={handleMegazordButton}>Summon Megazord</button>
-    <h2>{handleMegazordButton}</h2> 
+    <h2></h2> 
     {/* we are really close to figuring this out
     we know that the handleMegazordButton is working like it should
     and we are getting ONE of the OPERATIONS from the switch EXECUTED
