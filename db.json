@@ -4,31 +4,37 @@
       "id": 0,
       "name": "Bob",
       "color": "red",
-      "isSelected": false
+      "team": "Coconut Avengers"
     },
     {
       "id": 1,
       "name": "Sally",
       "color": "yellow",
-      "isSelected": false
+      "team": "Coconut Avengers"
     },
     {
       "id": 2,
       "name": "Trini",
       "color": "green",
-      "isSelected": false
+      "team": "Coconut Avengers"
     },
     {
       "id": 3,
       "name": "Bean",
       "color": "blue",
-      "isSelected": false
+      "team": "Coconut Avengers"
     },
     {
       "id": 4,
       "name": "Raisin",
       "color": "pink",
-      "isSelected": false
+      "team": "Coconut Avengers"
+    },
+    {
+      "name": "Coolie",
+      "color": "green",
+      "team": "Clean Towels",
+      "id": 5
     }
   ],
   "soggyPillows": [
@@ -36,31 +42,31 @@
       "id": 0,
       "name": "Panpan",
       "color": "red",
-      "isSelected": false
+      "team": "Soggy Pillows"
     },
     {
       "id": 1,
       "name": "Lick",
       "color": "blue",
-      "isSelected": false
+      "team":  "Soggy Pillows"
     },
     {
       "id": 2,
       "name": "Stubby",
       "color": "yellow",
-      "isSelected": false
+      "team":  "Soggy Pillows"
     },
     {
       "id": 3,
       "name": "Minty",
       "color": "green",
-      "isSelected": false
+      "team":  "Soggy Pillows"
     },
     {
       "id": 4,
       "name": "Waifu",
       "color": "pink",
-      "isSelected": false
+      "team":  "Soggy Pillows"
     }
   ],
   "tickleElves": [
@@ -68,31 +74,31 @@
       "id": 0,
       "name": "Pine Nut",
       "color": "red",
-      "isSelected": false
+      "team": "Tickle Elves"
     },
     {
       "id": 1,
       "name": "Ajax",
       "color": "blue",
-      "isSelected": false
+      "team": "Tickle Elves"
     },
     {
       "id": 2,
       "name": "Gus",
       "color": "yellow",
-      "isSelected": false
+      "team": "Tickle Elves"
     },
     {
       "id": 3,
       "name": "Mandy",
       "color": "green",
-      "isSelected": false
+      "team": "Tickle Elves"
     },
     {
       "id": 4,
       "name": "Nibbles",
       "color": "pink",
-      "isSelected": false
+      "team": "Tickle Elves"
     }
   ],
   "megazords": [
@@ -120,7 +126,7 @@
       "id": 4,
       "name": "Santa Tickler",
       "summonBy": "recruit all rangers from Tickle Elves"
-    },    
+    },
     {
       "id": 5,
       "name": "Coconut Christmas",
