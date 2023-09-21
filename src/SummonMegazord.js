@@ -60,13 +60,13 @@ switch (selectedRangers) {
     megazord = 'Fuzzy Sock Monkey';
     break;
   case [`Panpan, Lick, Stubby, Minty, Waifu`]:
-    rangerName = `King Sized Bed`;
+    megazord = `King Sized Bed`;
     break;
   case `Santa Tickler`:
-    rangerName = `Pine Nut, Ajax, Gus, Mandy, Nibbles`;
+    rangerName = [`Pine Nut, Ajax, Gus, Mandy, Nibbles`];
     break;
   case `Bloody Banana`:
-    rangerColor = `red, red, red, yellow, yellow`;
+    rangerColor = [`red, red, red, yellow, yellow`];
     break;
   case `Pink Lemonade`:
     rangerColor = `pink, pink, pink, blue, yellow`;
