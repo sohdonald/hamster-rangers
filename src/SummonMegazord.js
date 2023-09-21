@@ -54,33 +54,21 @@ let megazord;
  * 
 */
 
-function handleMegazord() {
-switch (selectedRangers) {
-  case ["Bob", "Sally", "Trini", "Bean", "Raisin"]:
-    megazord = 'Fuzzy Sock Monkey';
-    break;
-  case [`Panpan, Lick, Stubby, Minty, Waifu`]:
-    megazord = `King Sized Bed`;
-    break;
-  case `Santa Tickler`:
-    rangerName = [`Pine Nut, Ajax, Gus, Mandy, Nibbles`];
-    break;
-  case `Bloody Banana`:
-    rangerColor = [`red, red, red, yellow, yellow`];
-    break;
-  case `Pink Lemonade`:
-    rangerColor = `pink, pink, pink, blue, yellow`;
-    break;
-  case `Super Sour`:
-    rangerColor = `yellow, yellow, yellow, red, pink`;
-    break;
-  case `Boring Suitcase`:
-    rangerColor = `blue,blue,blue,yellow,red`;
-    break;
-  default:
-    console.log(`Cheap Knockoff`);
-    break;
-}
+// we can use search based on colors
+
+function handleMegazord(selectedRangers) {
+  const megazordOptions = {
+    ["red","red","red","yellow","yellow"]: 'Bloody Banana',
+    ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
+    ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
+    ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
+  };
+
+  if (megazordOptions[selectedRangers]) {
+    megazord = megazordOptions[selectedRangers];
+  } else {
+    megazord = 'Cheap Knockoff';
+  }
 }
 
 function handleMegazordButton() {

@@ -10,12 +10,12 @@ function RangerCard({
 }) {
   // seperate useState for counter
 
-  console.log(onCountDown);
-  console.log(onCountUp);
+  // console.log(onCountDown);
+  // console.log(onCountUp);
 
   const [selectRanger, setSelectRanger] = useState("select");
   //setSelectRanger is function
-  console.log(selectRanger); // outputs "select"
+  // console.log(selectRanger); // outputs "select"
 
   function handleSelectRanger() {
     // we should make a ternary that switches from select and deselect
@@ -63,7 +63,7 @@ function RangerCard({
 // we need to create this array with existing data
 // we need useState
 
-  console.log(onCountDown); // this is undefined, it's not misspelled
+  // console.log(onCountDown); // this is undefined, it's not misspelled
   // each rangerCard is outputting this console log, NOT just outputting it once
 
   /* have the onCountDown decrease by 1 with each ranger that has the select button

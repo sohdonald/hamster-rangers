@@ -24,7 +24,7 @@ function handleSubmit(e) {
         team: newTeam,
     }
     console.log(newRangerData);
-    
+
     fetch(`http://localhost:4000/coconutAvengers`, {
         method: "POST",
         headers: {"Content-Type": "application/json",},
@@ -37,7 +37,7 @@ function handleSubmit(e) {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <label>Name:
+                <label> Name:
                 <input 
                 type="text"
                 name="name"
@@ -45,7 +45,7 @@ function handleSubmit(e) {
                 onChange={(e)=> setNewName(e.target.value)}
                 />
                 </label>
-                <label>Color:
+                <label> Color:
                 <input 
                 type="text"
                 name="color"
@@ -53,7 +53,7 @@ function handleSubmit(e) {
                 onChange={(e)=> setNewColor(e.target.value)}
                 />
                 </label>  
-                <label>Team:
+                <label> Team:
                 <input 
                 type="text"
                 name="team"
@@ -62,6 +62,7 @@ function handleSubmit(e) {
                 />
                 </label>
                 <button type="submit">Recruit</button>
+                <h2>Bob has been recruited!</h2>
             </form>
         </div>
     );

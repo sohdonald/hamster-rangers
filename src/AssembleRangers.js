@@ -8,7 +8,7 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
   const [soggies, setSoggies] = useState([]);
   const [ticklers, setTicklers] = useState([]);
 
-  console.log(onCountDown)
+  // console.log(onCountDown)
 
   useEffect(() => {
     fetch(`http://localhost:4000/coconutAvengers`)

@@ -35,6 +35,18 @@
       "color": "green",
       "team": "Clean Towels",
       "id": 5
+    },
+    {
+      "name": "Lubber",
+      "color": "red",
+      "team": "Clean Towels",
+      "id": 6
+    },
+    {
+      "name": "Jessie",
+      "color": "blue",
+      "team": "Clean Towels",
+      "id": 7
     }
   ],
   "soggyPillows": [
@@ -48,25 +60,25 @@
       "id": 1,
       "name": "Lick",
       "color": "blue",
-      "team":  "Soggy Pillows"
+      "team": "Soggy Pillows"
     },
     {
       "id": 2,
       "name": "Stubby",
       "color": "yellow",
-      "team":  "Soggy Pillows"
+      "team": "Soggy Pillows"
     },
     {
       "id": 3,
       "name": "Minty",
       "color": "green",
-      "team":  "Soggy Pillows"
+      "team": "Soggy Pillows"
     },
     {
       "id": 4,
       "name": "Waifu",
       "color": "pink",
-      "team":  "Soggy Pillows"
+      "team": "Soggy Pillows"
     }
   ],
   "tickleElves": [
