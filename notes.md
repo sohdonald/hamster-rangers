@@ -25,6 +25,19 @@ step 3, fetch from that file
 render all the rangers in the gallery
 need map function
 
+would it be better to use routing for the switch statement in SummonMegazord?
+
+What other components in this app would benefit from routing?
+
+hamster-rangers.com/
+
+hamster-rangers.com/newrangerform
+
+a post and a submit
+use form html
+
+make a new ranger team of five or a new megazord
+
 
 three teams
 1. Coconut Avengers
