@@ -7,6 +7,9 @@ function RangerCard({
   onCountDown,
   onCountUp,
   countDown,
+  ranger,
+  setTeam,
+  removeRanger,
 }) {
   // seperate useState for counter
 
@@ -19,7 +22,7 @@ function RangerCard({
 
   function handleSelectRanger() {
     // we should make a ternary that switches from select and deselect
-    setSelectRanger(selectRanger === "deselect" ? "select" : "deselect");
+    // setSelectRanger(selectRanger === "deselect" ? "select" : "deselect");
     // the condition selectRanger === "deselect" evaluates to true or false
     // left hand side of ? is the condition we are checking
     // right hand side of ? is the output
@@ -32,7 +35,14 @@ function RangerCard({
       onCountDown(); // stops substracting after we reach -1, why?
       // onCountdown = countDown - 1
       // 0 - 1 = -1
+      setTeam((prev) => {
+        return [...prev, ranger];
+      });
+      setSelectRanger("deselect");
     } else if (selectRanger === "deselect") {
+      removeRanger(ranger);
+      setSelectRanger("select");
+
       // we need to check 2 conditions
       // 1. selectRanger = "deselect"
       // 2. count >= 0
@@ -46,7 +56,6 @@ function RangerCard({
       /* onCountDown() >= 0 doesn't work
         onCountDown() is a function
         they don't hold the value we need
-        
       */
 
       // clicking deselect adds the count to 1 to countDown
@@ -57,11 +66,11 @@ function RangerCard({
     }
   }
 
-// [..., handleSelectRanger]
-// need the selected rangers' names and colors
-// doesn't have this info at the beginning
-// we need to create this array with existing data
-// we need useState
+  // [..., handleSelectRanger]
+  // need the selected rangers' names and colors
+  // doesn't have this info at the beginning
+  // we need to create this array with existing data
+  // we need useState
 
   // console.log(onCountDown); // this is undefined, it's not misspelled
   // each rangerCard is outputting this console log, NOT just outputting it once
@@ -80,7 +89,7 @@ function RangerCard({
     <div className="card">
       <h3>name: {rangerName}</h3>
       <div>color: {rangerColor}</div>
-      <button className="select button" onClick={handleSelectRanger}>
+      <button className="select button" onClick={() => handleSelectRanger()}>
         {/* how do we decrease the number displayed in SelectRangers with this button? */}
         {selectRanger}
       </button>

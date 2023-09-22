@@ -5,7 +5,12 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
   const [rangers, setRangers] = useState([]);
+  const [team, setTeam] = useState([]);
+  console.log(team)
 
+  function removeRanger(ranger) {
+    setTeam((prev)=>prev.filter(item => item.id !== ranger.id))
+  }
 
   // console.log(onCountDown)
 
@@ -35,7 +40,7 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
       <h2>Rangers</h2>
       {rangers.map((ranger) => {
         return (
-          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
+          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown} ranger={ranger} setTeam={setTeam} removeRanger={removeRanger}/>
         );
       })}
     </div>

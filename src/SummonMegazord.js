@@ -38,8 +38,8 @@ let selectedRangers;
 let megazord;
 // how do we make the value dynamic?
 
- console.log(rangerColor) // it's console logging each ranger's color
- console.log(rangerName) // console logging each ranger's name
+//  console.log(rangerColor) // it's console logging each ranger's color
+//  console.log(rangerName) // console logging each ranger's name
 // console.log(countDown)
 
 /** we need to convert the arrays in rangerName and rangerColor
@@ -52,35 +52,41 @@ let megazord;
     Megazord = `Fuzzy Sock Monkey`
     break;
  * 
+    perhaps we need to have placeholders like this
+    [ranger0,ranger1,ranger2,ranger3,ranger4]
+
+    ranger0 = the 1st ranger that we selected, ranger1= 2nd ranger...
+
+    how do we create a new array with only the 5 rangers selected?
 */
 
 // we can use search based on colors
 
-function handleMegazord(selectedRangers) {
-  const megazordOptions = {
-    ["red","red","red","yellow","yellow"]: 'Bloody Banana',
-    ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
-    ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
-    ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
-  };
+// function handleMegazord(selectedRangers) {
+//   const megazordOptions = {
+//     ["red","red","red","yellow","yellow"]: 'Bloody Banana',
+//     ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
+//     ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
+//     ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
+//   };
 
-  if (megazordOptions[selectedRangers]) {
-    megazord = megazordOptions[selectedRangers];
-  } else {
-    megazord = 'Cheap Knockoff';
-  }
-}
+//   if (megazordOptions[selectedRangers]) {
+//     megazord = megazordOptions[selectedRangers];
+//   } else {
+//     megazord = 'Cheap Knockoff';
+//   }
+// }
 
-function handleMegazordButton() {
-  console.log("countDown", countDown)
-  if (countDown === 0) {
-    handleMegazord();
-  }
-}
+// function handleMegazordButton() {
+//   //console.log("countDown", countDown)
+//   if (countDown === 0) {
+//     handleMegazord();
+//   }
+// }
 
 return (
   <div>
-    <button onClick={handleMegazordButton}>Summon Megazord</button>
+    {/* <button onClick={handleMegazordButton}>Summon Megazord</button> */}
     <h2></h2> 
     {/* we are really close to figuring this out
     we know that the handleMegazordButton is working like it should
