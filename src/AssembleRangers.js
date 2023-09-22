@@ -4,30 +4,20 @@ import RangerCard from "./RangerCard";
 function AssembleRangers({onCountDown, onCountUp, countDown}) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
-  const [coconuts, setCoconuts] = useState([]);
-  const [soggies, setSoggies] = useState([]);
-  const [ticklers, setTicklers] = useState([]);
+  const [rangers, setRangers] = useState([]);
+
 
   // console.log(onCountDown)
 
   useEffect(() => {
-    fetch(`http://localhost:4000/coconutAvengers`)
+    fetch(`http://localhost:4000/rangers`)
       .then((r) => r.json())
-      .then((rangersJson) => setCoconuts(rangersJson));
+      .then((rangersJson) => setRangers(rangersJson));
     // setRangers set the current state of rangers to rangersJson
   }, []);
+// making multiple fetches would make this way more complicated than necessary
+// so let's just make it one fetch as it will make it easier to retrieve the data we need
 
-  useEffect(() => {
-    fetch(`http://localhost:4000/soggyPillows`)
-      .then((r) => r.json())
-      .then((soggyJson) => setSoggies(soggyJson));
-  }, []);
-
-  useEffect(() => {
-    fetch(`http://localhost:4000/tickleElves`)
-      .then((r) => r.json())
-      .then((tickJson) => setTicklers(tickJson));
-  }, []);
 
   return (
     <div >
@@ -42,20 +32,8 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
             
             rangers.map((ranger)=> {return <RangerCard/>})*/}
 
-      <h2>Coconut Avengers</h2>
-      {coconuts.map((ranger) => {
-        return (
-          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
-        );
-      })}
-      <h2>Soggy Pillows</h2>
-      {soggies.map((ranger) => {
-        return (
-          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
-        );
-      })}
-      <h2>Tickle Elves</h2>
-      {ticklers.map((ranger) => {
+      <h2>Rangers</h2>
+      {rangers.map((ranger) => {
         return (
           <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown}/>
         );

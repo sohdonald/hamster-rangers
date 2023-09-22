@@ -25,7 +25,7 @@ function handleSubmit(e) {
     }
     console.log(newRangerData);
 
-    fetch(`http://localhost:4000/coconutAvengers`, {
+    fetch(`http://localhost:4000/rangers`, {
         method: "POST",
         headers: {"Content-Type": "application/json",},
         body: JSON.stringify(newRangerData),

@@ -1,5 +1,5 @@
 {
-  "coconutAvengers": [
+  "rangers": [
     {
       "id": 0,
       "name": "Bob",
@@ -31,86 +31,84 @@
       "team": "Coconut Avengers"
     },
     {
-      "name": "Coolie",
-      "color": "green",
-      "team": "Clean Towels",
-      "id": 5
-    },
-    {
-      "name": "Lubber",
-      "color": "red",
-      "team": "Clean Towels",
-      "id": 6
-    },
-    {
-      "name": "Jessie",
-      "color": "blue",
-      "team": "Clean Towels",
-      "id": 7
-    }
-  ],
-  "soggyPillows": [
-    {
-      "id": 0,
+      "id": 5,
       "name": "Panpan",
       "color": "red",
       "team": "Soggy Pillows"
     },
     {
-      "id": 1,
+      "id": 6,
       "name": "Lick",
       "color": "blue",
       "team": "Soggy Pillows"
     },
     {
-      "id": 2,
+      "id": 7,
       "name": "Stubby",
       "color": "yellow",
       "team": "Soggy Pillows"
     },
     {
-      "id": 3,
+      "id": 8,
       "name": "Minty",
       "color": "green",
       "team": "Soggy Pillows"
     },
     {
-      "id": 4,
+      "id": 9,
       "name": "Waifu",
       "color": "pink",
       "team": "Soggy Pillows"
-    }
-  ],
-  "tickleElves": [
+    },
+
     {
-      "id": 0,
+      "id": 10,
       "name": "Pine Nut",
       "color": "red",
       "team": "Tickle Elves"
     },
     {
-      "id": 1,
+      "id": 11,
       "name": "Ajax",
       "color": "blue",
       "team": "Tickle Elves"
     },
     {
-      "id": 2,
+      "id": 12,
       "name": "Gus",
       "color": "yellow",
       "team": "Tickle Elves"
     },
     {
-      "id": 3,
+      "id": 13,
       "name": "Mandy",
       "color": "green",
       "team": "Tickle Elves"
     },
     {
-      "id": 4,
+      "id": 14,
       "name": "Nibbles",
       "color": "pink",
       "team": "Tickle Elves"
+    },
+    {
+      "name": "Lubber",
+      "color": "red",
+      "team": "Clean Towels",
+      "id": 15
+    },
+    {
+      "name": "Coolie",
+      "color": "green",
+      "team": "Clean Towels",
+      "id": 16
+    },
+  
+    {
+      "name": "Jessie",
+      "color": "blue",
+      "team": "Clean Towels",
+      "id": 17
     }
   ],
   "megazords": [
