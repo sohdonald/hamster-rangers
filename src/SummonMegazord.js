@@ -37,7 +37,6 @@ function SummonMegazord({ team }) {
   /** we need to convert the arrays in rangerColor
  * into string arrays like this
  * rangerColor = ["red", "blue", "yellow", "green", "pink"]
- * 
  * [..., rangerColor]
  * 
     how do we create a new array with only the 5 rangers selected?
@@ -72,7 +71,6 @@ function SummonMegazord({ team }) {
         } else if (color === "pink") {
           p = p + 1;
         }
-        console.log(r, y, b, g, p);
       });
 
       // rangerColors is currently an array of strings
@@ -98,9 +96,8 @@ function SummonMegazord({ team }) {
       compare 'red' in colorString
       colorString is a string
       rangerColors.forEach((color)=>console.log(color))
-      
        */
-      /**compare with if  */
+
       if (r === 3 && y === 2) {
         megazord = "Bloody Banana";
       } else if (p === 3 && b === 1 && y === 1) {
