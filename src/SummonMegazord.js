@@ -32,18 +32,13 @@ switch (order) {
 import React from "react";
 
 function SummonMegazord({ team }) {
-
   // how do we make the value dynamic?
 
-  /** we need to convert the arrays in rangerName and rangerColor
+  /** we need to convert the arrays in rangerColor
  * into string arrays like this
- * rangerName = ["Bob", "Sally", "Trini", "Bean", "Raisin"]
+ * rangerColor = ["red", "blue", "yellow", "green", "pink"]
  * 
- * [..., rangerName]
- * 
- * case ["Bob", "Sally", "Trini", "Bean", "Raisin"]:
-    Megazord = `Fuzzy Sock Monkey`
-    break;
+ * [..., rangerColor]
  * 
     how do we create a new array with only the 5 rangers selected?
 */
@@ -56,13 +51,32 @@ function SummonMegazord({ team }) {
 
   function handleMegazord() {
     if (team.length === 5) {
-        let rangerColors = team.map((ranger)=> ranger.color)
-        // we want to compare contents of rangerColors to contents of Bloody Banana
-        // for loop by comparing each item
-        // for () {
-        //     return "Bloody Banana"
-        // }
-    console.log(rangerColors)
+      let rangerColors = team.map((ranger) => ranger.color);
+      let colorString = rangerColors.join(", ")
+      let megazord = 'calculating megazord'
+      console.log(colorString)
+
+      // rangerColors is currently an array of strings
+     // rangerColors combine existing array as a string
+      // we want to compare contents of rangerColors to contents of Bloody Banana
+      // for loop by comparing each item
+      //  for ([initialization],[condition],[iteration]) {[loop body]}
+      /** INITIALIZATION is the variable we begin with
+       * CONDITION is the expression evaluated before each pass through the loop, if expression
+       * is true, the statements in the LOOP BODY are executed
+       * ITERATION is the expression executed at the end of each iteration */
+      /**goal is to return a specific megazord based on colors
+       * how do we compare rangerColors with a condition?
+       */ 
+     switch(colorString) {
+     case "red, red, red, yellow, yellow":
+     megazord ="Bloody Banana"
+     break;
+     default:
+        megazord= "Cheap Knockoff"
+       }
+       
+      console.log(megazord);
       return "calculating megazord";
     }
     return "Cheap Knockoff"; //
