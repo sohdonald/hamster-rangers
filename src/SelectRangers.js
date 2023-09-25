@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 /* this component displays all the rangers we selected.
 
@@ -23,7 +23,7 @@ function handleCountDown() {
 
 function SelectRangers({onCountDown}) {
 
-  console.log(onCountDown)  // why is this undefined?, the 'd' was not capitalized
+ // why is this undefined?, the 'd' was not capitalized
 
 // onCountDown = 5 may give us 5, but it is an assignment operator, doesn't work 
 // the value from App is not being passed down here, 

@@ -4,12 +4,14 @@ import SelectRangers from "./SelectRangers";
 import { Route, Switch } from "react-router-dom";
 import NewRangerForm from "./NewRangerForm";
 import NavBar from "./NavBar";
+import SummonMegazord from "./SummonMegazord";
 
 // need to declare countDown state to every component that needs it
 
 function App() {
   const [countDown, setCountDown] = useState(5);
-  console.log(countDown); // displays 5
+  const [team, setTeam] = useState([]);
+  // displays 5
   // the number is not displaying
   // this state makes the number of rangers we selected dynamic
   function handleCountDown() {
@@ -26,11 +28,15 @@ function App() {
       <Switch>
         <Route exact path="/">
           <SelectRangers onCountDown={countDown} />
+          <SummonMegazord team= {team}/>
           <AssembleRangers
             onCountDown={handleCountDown}
             onCountUp={handleCountUp}
             countDown={countDown}
+            team = {team}
+            setTeam = {setTeam}
           />
+          
         </Route>
         <Route exact path="/newrangerform">
             <NewRangerForm />

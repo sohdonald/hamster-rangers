@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SummonMegazord from "./SummonMegazord";
 
 function RangerCard({
   rangerColor,
@@ -66,7 +65,6 @@ function RangerCard({
     }
   }
 
-  // [..., handleSelectRanger]
   // need the selected rangers' names and colors
   // doesn't have this info at the beginning
   // we need to create this array with existing data
@@ -77,13 +75,8 @@ function RangerCard({
 
   /* have the onCountDown decrease by 1 with each ranger that has the select button
   set as "deselect" 
-  
   Then have onCountDown increase by 1 with each select button set as "select", max at 5
   */
-
-  // function countRanger() {
-  //   setRangerCount(rangerCount + 1);
-  // }
 
   return (
     <div className="card">
@@ -93,11 +86,11 @@ function RangerCard({
         {/* how do we decrease the number displayed in SelectRangers with this button? */}
         {selectRanger}
       </button>
-      <SummonMegazord
+      {/* <SummonMegazord
         rangerColor={rangerColor}
         rangerName={rangerName}
         countDown={countDown}
-      />
+      /> */}
     </div>
   );
 }

@@ -31,18 +31,11 @@ switch (order) {
 
 import React from "react";
 
+function SummonMegazord({ team }) {
 
-function SummonMegazord({rangerColor, rangerName, countDown}) {
+  // how do we make the value dynamic?
 
-let selectedRangers;
-let megazord;
-// how do we make the value dynamic?
-
-//  console.log(rangerColor) // it's console logging each ranger's color
-//  console.log(rangerName) // console logging each ranger's name
-// console.log(countDown)
-
-/** we need to convert the arrays in rangerName and rangerColor
+  /** we need to convert the arrays in rangerName and rangerColor
  * into string arrays like this
  * rangerName = ["Bob", "Sally", "Trini", "Bean", "Raisin"]
  * 
@@ -52,51 +45,49 @@ let megazord;
     Megazord = `Fuzzy Sock Monkey`
     break;
  * 
-    perhaps we need to have placeholders like this
-    [ranger0,ranger1,ranger2,ranger3,ranger4]
-
-    ranger0 = the 1st ranger that we selected, ranger1= 2nd ranger...
-
     how do we create a new array with only the 5 rangers selected?
 */
+  // ["red","red","red","yellow","yellow"]: 'Bloody Banana',
+  //      ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
+  //     ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
+  //     ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
 
-// we can use search based on colors
+  // we can use search based on colors
 
-// function handleMegazord(selectedRangers) {
-//   const megazordOptions = {
-//     ["red","red","red","yellow","yellow"]: 'Bloody Banana',
-//     ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
-//     ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
-//     ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
-//   };
+  function handleMegazord() {
+    if (team.length === 5) {
+        let rangerColors = team.map((ranger)=> ranger.color)
+        // we want to compare contents of rangerColors to contents of Bloody Banana
+        // for loop by comparing each item
+        // for () {
+        //     return "Bloody Banana"
+        // }
+    console.log(rangerColors)
+      return "calculating megazord";
+    }
+    return "Cheap Knockoff"; //
+  }
 
-//   if (megazordOptions[selectedRangers]) {
-//     megazord = megazordOptions[selectedRangers];
-//   } else {
-//     megazord = 'Cheap Knockoff';
-//   }
-// }
+  // function handleMegazordButton() {
+  //   //console.log("countDown", countDown)
+  //   if (countDown === 0) {
+  //     handleMegazord();
+  //   }
+  // }
 
-// function handleMegazordButton() {
-//   //console.log("countDown", countDown)
-//   if (countDown === 0) {
-//     handleMegazord();
-//   }
-// }
-
-return (
-  <div>
-    {/* <button onClick={handleMegazordButton}>Summon Megazord</button> */}
-    <h2></h2> 
-    {/* we are really close to figuring this out
+  return (
+    <div>
+      {/* <button onClick={handleMegazordButton}>Summon Megazord</button> */}
+      <h2>Here Comes A New Megazord!</h2>
+      <h1>{handleMegazord()}</h1>
+      {/* we are really close to figuring this out
     we know that the handleMegazordButton is working like it should
     and we are getting ONE of the OPERATIONS from the switch EXECUTED
      
     Now we need to figure out how to get the other operations to execute
      */}
-  </div>
-);
-
+    </div>
+  );
 }
 
 export default SummonMegazord;
@@ -120,27 +111,27 @@ export default SummonMegazord;
 
 /** the statements in rangers are strings,
  *  but the data we need are keys from objects
- * So we need to convert this data 
- * 
+ * So we need to convert this data
+ *
  * didn't we already convert this data in AssembleRangers
  * How do we pass it down here?
- * 
+ *
  * rangerColor and rangerName are the props we need
- * 
+ *
  * Even that would not be enough
  * How would the 'stringified' data know to check if the statements match?
  * Especially since the statements themselves don't tell specifically to
  * look for name: and color:
- * 
+ *
  * I was thinking e.target would be useful, but
  * what does e.target do?  Would it really 'target' the data we want to check?
- * 
- * 
+ *
+ *
  * it would be confusing if we have to do something like this
  * rangers = `rangers.color===red && rangers.color===yellow && rangers.color===green...`
- * besides, this wouldn't work anyway because it would only output objects that matches ALL these conditions 
+ * besides, this wouldn't work anyway because it would only output objects that matches ALL these conditions
  * instead of ASSIGNING a different 'check' FOR EACH ranger we selected
- * 
+ *
  * there's gotta be a way to check and match data that doesn't look confusing
  */
 

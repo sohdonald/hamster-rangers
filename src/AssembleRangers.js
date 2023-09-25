@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import RangerCard from "./RangerCard";
 
-function AssembleRangers({onCountDown, onCountUp, countDown}) {
+function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
   const [rangers, setRangers] = useState([]);
-  const [team, setTeam] = useState([]);
-  console.log(team)
+
 
   function removeRanger(ranger) {
-    setTeam((prev)=>prev.filter(item => item.id !== ranger.id))
+    setTeam((prev) => prev.filter((item) => item.id !== ranger.id));
   }
 
   // console.log(onCountDown)
@@ -20,12 +19,11 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
       .then((rangersJson) => setRangers(rangersJson));
     // setRangers set the current state of rangers to rangersJson
   }, []);
-// making multiple fetches would make this way more complicated than necessary
-// so let's just make it one fetch as it will make it easier to retrieve the data we need
-
+  // making multiple fetches would make this way more complicated than necessary
+  // so let's just make it one fetch as it will make it easier to retrieve the data we need
 
   return (
-    <div >
+    <div>
       {/* should show a bunch of ranger cards for
             us to select, is when we recruit, the text should be
             updated with the remaining number of rangers that are needed to
@@ -40,7 +38,17 @@ function AssembleRangers({onCountDown, onCountUp, countDown}) {
       <h2>Rangers</h2>
       {rangers.map((ranger) => {
         return (
-          <RangerCard key={ranger.id} rangerName={ranger.name} rangerColor={ranger.color} onCountDown={onCountDown} onCountUp={onCountUp} countDown={countDown} ranger={ranger} setTeam={setTeam} removeRanger={removeRanger}/>
+          <RangerCard
+            key={ranger.id}
+            rangerName={ranger.name}
+            rangerColor={ranger.color}
+            onCountDown={onCountDown}
+            onCountUp={onCountUp}
+            countDown={countDown}
+            ranger={ranger}
+            setTeam={setTeam}
+            removeRanger={removeRanger}
+          />
         );
       })}
     </div>
