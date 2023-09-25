@@ -42,6 +42,7 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
             key={ranger.id}
             rangerName={ranger.name}
             rangerColor={ranger.color}
+            rangerTeam={ranger.team}
             onCountDown={onCountDown}
             onCountUp={onCountUp}
             countDown={countDown}

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styles from "./RangerCard.module.css"
+// import styles from "./Component.module.css"
 
 function RangerCard({
   rangerColor,
@@ -9,6 +11,7 @@ function RangerCard({
   ranger,
   setTeam,
   removeRanger,
+  rangerTeam
 }) {
   // seperate useState for counter
 
@@ -70,6 +73,21 @@ function RangerCard({
   // we need to create this array with existing data
   // we need useState
 
+  // how can we set the style to give each team a different background color?
+  // how can we tell which team the ranger is on?
+
+  // if rangerTeam === "Coconut Avengers",
+  // then set the background color to lemon yellow
+  let className= ''
+
+  if (rangerTeam === "Coconut Avengers") {
+    className = styles.coconuts
+  } else if (rangerTeam === "Soggy Pillows") {
+    className = styles.soggies
+  } else if (rangerTeam === "Tickle Elves") {
+    className = styles.ticklers
+  }
+
   // console.log(onCountDown); // this is undefined, it's not misspelled
   // each rangerCard is outputting this console log, NOT just outputting it once
 
@@ -79,9 +97,10 @@ function RangerCard({
   */
 
   return (
-    <div className="card">
+    <div className={className}>
       <h3>name: {rangerName}</h3>
       <div>color: {rangerColor}</div>
+      <div> team: {rangerTeam} </div>
       <button className="select button" onClick={() => handleSelectRanger()}>
         {/* how do we decrease the number displayed in SelectRangers with this button? */}
         {selectRanger}
