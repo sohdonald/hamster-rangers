@@ -52,12 +52,31 @@ function SummonMegazord({ team }) {
   function handleMegazord() {
     if (team.length === 5) {
       let rangerColors = team.map((ranger) => ranger.color);
-      let colorString = rangerColors.join(", ")
-      let megazord = 'calculating megazord'
-      console.log(colorString)
+      let colorString = rangerColors.join(", ");
+      let megazord = "calculating megazord";
+      let r = 0;
+      let y = 0;
+      let b = 0;
+      let g = 0;
+      let p = 0;
+      console.log(colorString);
+      rangerColors.forEach((color) => {
+        if (color === "red") {
+          r = r + 1;
+        } else if (color === "yellow") {
+          y = y + 1;
+        } else if (color === "blue") {
+          b = b + 1;
+        } else if (color === "green") {
+          g = g + 1;
+        } else if (color === "pink") {
+          p = p + 1;
+        }
+        console.log(r, y, b, g, p);
+      });
 
       // rangerColors is currently an array of strings
-     // rangerColors combine existing array as a string
+      // rangerColors combine existing array as a string
       // we want to compare contents of rangerColors to contents of Bloody Banana
       // for loop by comparing each item
       //  for ([initialization],[condition],[iteration]) {[loop body]}
@@ -67,19 +86,36 @@ function SummonMegazord({ team }) {
        * ITERATION is the expression executed at the end of each iteration */
       /**goal is to return a specific megazord based on colors
        * how do we compare rangerColors with a condition?
-       */ 
-     switch(colorString) {
-     case "red, red, red, yellow, yellow":
-     megazord ="Bloody Banana"
-     break;
-     default:
-        megazord= "Cheap Knockoff"
-       }
-       
+       */
+      /** if r = 0
+       * then 'red, red, red' = 3r
+       * r keeps track of number of rangers with color = 'red'
+       * we need a way to keep track of r
+
+      need to check each ranger color from rangers object array
+      datatype of rangerColor is a string
+      for each 'red', increase r by +1
+      compare 'red' in colorString
+      colorString is a string
+      rangerColors.forEach((color)=>console.log(color))
+      
+       */
+      /**compare with if  */
+      if (r === 3 && y === 2) {
+        megazord = "Bloody Banana";
+      } else if (p === 3 && b === 1 && y === 1) {
+        megazord = "Pink Lemonade";
+      } else if (p === 1 && r === 1 && y === 3) {
+        megazord = "Super Sour";
+      } else if (b === 3 && y ===1 && r === 1) {
+        megazord = "Boring Suitcase"
+      } else {
+        megazord = "Cheap Knockoff"
+      }
+
       console.log(megazord);
-      return "calculating megazord";
+      return megazord;
     }
-    return "Cheap Knockoff"; //
   }
 
   // function handleMegazordButton() {
