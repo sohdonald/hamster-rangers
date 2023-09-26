@@ -1,21 +1,34 @@
 .fuzzies {
     background-color: rgb(138, 218, 72);
+    display: flex;
+    justify-content: space-between;
+    align-content:center
 }
 
 .coconuts {
     background-color: aquamarine;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-content:center
 }
 
 .soggies {
     background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    align-content:center
 }
 
 .ticklers {
     background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-content:center
 }
 
 .towels {
     background-color: rgb(224, 65, 113);
+    display: flex;
+    justify-content: space-between;
+    align-content:center
 }

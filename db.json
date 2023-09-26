@@ -128,14 +128,14 @@
     },
     {
       "name": "Spinach",
-      "color": "green",
-      "team": "Clean Towels",
+      "color": "red",
+      "team": "Fuzzy Pumpkins",
       "id": 21
     },
     {
       "name": "Tom",
-      "color": "green",
-      "team": "Soggy Pillows",
+      "color": "pink",
+      "team": "Fuzzy Pumpkins",
       "id": 22
     },
     {
@@ -157,7 +157,7 @@
       "id": 25
     },
     {
-      "name": "Jessie",
+      "name": "Jasper",
       "color": "red",
       "team": "Soggy Pillows",
       "id": 26
