@@ -108,6 +108,10 @@ function SummonMegazord({ team }) {
         megazord = "Boring Suitcase";
       } else if (p=== 1 && g === 1 && b === 1 && y === 1 && r === 1) {
         megazord = "Classic Coke";
+      } else if (r === 5) {
+        megazord = "Promoting Violence";
+      } else if (b === 4 && g === 1) {
+        megazord = "Invisible Hamster King";
       } else {
         megazord = "Cheap Knockoff";
       }
