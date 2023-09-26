@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from "react";
+import styles from "./NewRangerForm.module.css"
 
 function NewRangerForm() {
   const [newName, setNewName] = useState("");
@@ -33,7 +34,7 @@ function NewRangerForm() {
   }
 
   return (
-    <div>
+    <div className={styles.submit}>
       <form onSubmit={handleSubmit}>
         <label>
           {" "}
@@ -80,7 +81,7 @@ function NewRangerForm() {
             <option value="Coconut Avengers">Coconut Avengers</option>
           </select>
         </label>
-        <button type="submit">Recruit</button>
+        <button className={styles.button} type="submit">Recruit</button>
         <h2>Bob has been recruited!</h2>
       </form>
     </div>

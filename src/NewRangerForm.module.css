@@ -1,0 +1,17 @@
+.submit {
+    display: flex;
+    padding-top: 2rem;
+    font-size: 20pt;
+}
+
+.submit label {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-bottom: 1rem;
+}
+
+.button {
+    font-size: larger;
+    padding: 1rem;
+}

@@ -1,40 +1,28 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
+import styles from "./NavBar.module.css"
 
-const linkStyles = {
-    display: "inline-block",
-    width: "50px",
-    padding: "12px",
-    margin: "0 6px 6px",
-    background: "blue",
-    textDecoration: "none",
-    color: "white",
-  };
 
 function NavBar() {
     return (
-        <div>
+        <nav className={styles.nav}>
+            <h2>Hamster Rangers</h2>
+            <ul>
             <NavLink
             to= "/"
             exact
-            style={linkStyles}
-            activeStyle={{
-                background: "darkblue",
-            }}
+      
             >
                 Home
             </NavLink>
             <NavLink
             to= "/newrangerform"
             exact
-            style={linkStyles}
-            activeStyle={{
-                background: "darkblue",
-            }}
             >
                 New Ranger Recruit Form
             </NavLink>
-        </div>
+            </ul>
+        </nav>
     );
 }
 
