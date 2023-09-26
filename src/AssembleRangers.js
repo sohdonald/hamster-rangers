@@ -36,7 +36,14 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
             rangers.map((ranger)=> {return <RangerCard/>})*/}
 
       <h2>Rangers</h2>
-      {rangers.map((ranger) => {
+      <table style={{width:"80%"}}>
+        <tr>
+          <th>Name</th>
+          <th>Color</th>
+          <th>Team</th>
+          <th>Select</th>
+        </tr>
+        {rangers.map((ranger) => {
         return (
           <RangerCard
             key={ranger.id}
@@ -52,6 +59,8 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
           />
         );
       })}
+      </table>
+ 
     </div>
   );
 }

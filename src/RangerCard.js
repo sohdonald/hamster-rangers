@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./RangerCard.module.css"
+import styles from "./RangerCard.module.css";
 // import styles from "./Component.module.css"
 
 function RangerCard({
@@ -11,7 +11,7 @@ function RangerCard({
   ranger,
   setTeam,
   removeRanger,
-  rangerTeam
+  rangerTeam,
 }) {
   // seperate useState for counter
 
@@ -78,18 +78,18 @@ function RangerCard({
 
   // if rangerTeam === "Coconut Avengers",
   // then set the background color to lemon yellow
-  let className= ''
+  let className = "";
 
   if (rangerTeam === "Coconut Avengers") {
-    className = styles.coconuts
+    className = styles.coconuts;
   } else if (rangerTeam === "Soggy Pillows") {
-    className = styles.soggies
+    className = styles.soggies;
   } else if (rangerTeam === "Tickle Elves") {
-    className = styles.ticklers
+    className = styles.ticklers;
   } else if (rangerTeam === "Clean Towels") {
-    className = styles.towels
+    className = styles.towels;
   } else if (rangerTeam === "Fuzzy Pumpkins") {
-    className = styles.fuzzies
+    className = styles.fuzzies;
   }
 
   // console.log(onCountDown); // this is undefined, it's not misspelled
@@ -101,15 +101,19 @@ function RangerCard({
   */
 
   return (
-    <div className={className}>
-      <h3>name: {rangerName}</h3>
-      <div>color: {rangerColor}</div>
-      <div> team: {rangerTeam} </div>
-      <button className="select button" onClick={() => handleSelectRanger()}>
-        {/* how do we decrease the number displayed in SelectRangers with this button? */}
-        {selectRanger}
-      </button>
-    </div>
+    <tr className={className}>
+      <td>
+        <h3>{rangerName}</h3>
+      </td>
+      <td>{rangerColor}</td>
+      <td> {rangerTeam} </td>
+      <td>
+        <button className="select button" onClick={() => handleSelectRanger()}>
+          {/* how do we decrease the number displayed in SelectRangers with this button? */}
+          {selectRanger}
+        </button>
+      </td>
+    </tr>
   );
 }
 

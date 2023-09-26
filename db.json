@@ -161,6 +161,12 @@
       "color": "red",
       "team": "Soggy Pillows",
       "id": 26
+    },
+    {
+      "name": "Russ",
+      "color": "blue",
+      "team": "Clean Towels",
+      "id": 27
     }
   ],
   "megazords": [
