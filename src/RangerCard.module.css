@@ -4,6 +4,8 @@
 
 .coconuts {
     background-color: aquamarine;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .soggies {

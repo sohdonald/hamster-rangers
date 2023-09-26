@@ -60,7 +60,6 @@
       "color": "pink",
       "team": "Soggy Pillows"
     },
-
     {
       "id": 10,
       "name": "Pine Nut",
@@ -103,12 +102,65 @@
       "team": "Clean Towels",
       "id": 16
     },
-  
     {
       "name": "Jessie",
       "color": "blue",
       "team": "Clean Towels",
       "id": 17
+    },
+    {
+      "name": "Potato",
+      "color": "yellow",
+      "team": "Fuzzy Pumpkins",
+      "id": 18
+    },
+    {
+      "name": "Gumball",
+      "color": "pink",
+      "team": "Fuzzy Pumpkins",
+      "id": 19
+    },
+    {
+      "name": "Jessie",
+      "color": "blue",
+      "team": "Fuzzy Pumpkins",
+      "id": 20
+    },
+    {
+      "name": "Spinach",
+      "color": "green",
+      "team": "Clean Towels",
+      "id": 21
+    },
+    {
+      "name": "Tom",
+      "color": "green",
+      "team": "Soggy Pillows",
+      "id": 22
+    },
+    {
+      "name": "Lick",
+      "color": "red",
+      "team": "Coconut Avengers",
+      "id": 23
+    },
+    {
+      "name": "Donald",
+      "color": "yellow",
+      "team": "Tickle Elves",
+      "id": 24
+    },
+    {
+      "name": "Tummy",
+      "color": "blue",
+      "team": "Coconut Avengers",
+      "id": 25
+    },
+    {
+      "name": "Jessie",
+      "color": "red",
+      "team": "Soggy Pillows",
+      "id": 26
     }
   ],
   "megazords": [
