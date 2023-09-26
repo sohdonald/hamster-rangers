@@ -86,6 +86,10 @@ function RangerCard({
     className = styles.soggies
   } else if (rangerTeam === "Tickle Elves") {
     className = styles.ticklers
+  } else if (rangerTeam === "Clean Towels") {
+    className = styles.towels
+  } else if (rangerTeam === "Fuzzy Pumpkins") {
+    className = styles.fuzzies
   }
 
   // console.log(onCountDown); // this is undefined, it's not misspelled
