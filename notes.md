@@ -25,6 +25,16 @@ step 3, fetch from that file
 render all the rangers in the gallery
 need map function
 
+
+need a reset button
+sort the rangers by team after submitting them
+
+review how to work in branch workflow and merge
+
+don't sort your states, sort the copy of the arrays
+sortedRangers.sort()
+
+
 would it be better to use routing for the switch statement in SummonMegazord?
 
 What other components in this app would benefit from routing?
