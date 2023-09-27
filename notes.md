@@ -37,6 +37,18 @@ check out tailwind and bootstrap
 don't sort your states, sort the copy of the arrays
 sortedRangers.sort()
 
+branch commands
+git branch displays branches
+git checkout [branch-name] switches to this branch
+
+how to make a branch
+git checkout -b [new-name]
+
+how to delete a branch
+git branch --delete [branch-name] this is for merged branches
+git branch -D [branch-name] for unmerged branches
+
+How to do a deploy?  What can I do and can't do after an app is deployed 
 
 would it be better to use routing for the switch statement in SummonMegazord?
 

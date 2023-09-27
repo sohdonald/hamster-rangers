@@ -1,8 +1,3 @@
-// this will be a new route
-/**
- * set this up as component, then use routing
- */
-
 import React, { useState } from "react";
 import styles from "./NewRangerForm.module.css"
 
@@ -12,6 +7,10 @@ function NewRangerForm() {
   const [newTeam, setNewTeam] = useState("Soggy Pillows");
   const [newRanger, setNewRanger] = useState("");
   const [clickSubmit, setClickSubmit] = useState(false)
+
+// sometimes get an error that asks for newRanger to be used
+// How do I get rid of it? Do I need to get rid of it?
+
 
   // how do we make the h2, "Bob has been recruited!"
   // change to say "newName" has been recruited!
