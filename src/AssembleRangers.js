@@ -6,13 +6,11 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
   const [rangers, setRangers] = useState([]);
-
+  // sort rangers array
 
   function removeRanger(ranger) {
     setTeam((prev) => prev.filter((item) => item.id !== ranger.id));
   }
-
-  // console.log(onCountDown)
 
   useEffect(() => {
     fetch(`http://localhost:4000/rangers`)
@@ -24,18 +22,24 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
   // so let's just make it one fetch as it will make it easier to retrieve the data we need
 
   const [selectedTeam, setSelectedTeam] = useState("All");
-  const rangerFilterArray = rangers.filter((ranger)=> {
+  
+  // sort rangers here
+  const sortedRangers = [...rangers].sort((rangerA, rangerB) =>
+    rangerA.team.localeCompare(rangerB.team)
+  );
+  
+  const rangerFilterArray = sortedRangers.filter((ranger) => {
     if (selectedTeam === "All") {
-      return ranger
+      return ranger;
     } else {
-      return ranger.team === selectedTeam
+      return ranger.team === selectedTeam;
     }
-  })
-  console.log(rangerFilterArray)
-  // const [selectedColor, setSelectedColor] = useState("All");
+  });
 
-  function handleTeamChange (rangerTeam) {
-    setSelectedTeam(rangerTeam)
+
+
+  function handleTeamChange(rangerTeam) {
+    setSelectedTeam(rangerTeam);
   }
 
   return (
@@ -52,11 +56,9 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
             rangers.map((ranger)=> {return <RangerCard/>})*/}
 
       <h2>Rangers</h2>
-      <Filter 
-        selectedTeam={selectedTeam}
-        onTeamChange={handleTeamChange}/>
+      <Filter selectedTeam={selectedTeam} onTeamChange={handleTeamChange} />
 
-      <table style={{width:"80%"}}>
+      <table style={{ width: "80%" }}>
         <tr>
           <th>Name</th>
           <th>Color</th>
@@ -64,23 +66,22 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
           <th>Select</th>
         </tr>
         {rangerFilterArray.map((ranger) => {
-        return (
-          <RangerCard
-            key={ranger.id}
-            rangerName={ranger.name}
-            rangerColor={ranger.color}
-            rangerTeam={ranger.team}
-            onCountDown={onCountDown}
-            onCountUp={onCountUp}
-            countDown={countDown}
-            ranger={ranger}
-            setTeam={setTeam}
-            removeRanger={removeRanger}
-          />
-        );
-      })}
+          return (
+            <RangerCard
+              key={ranger.id}
+              rangerName={ranger.name}
+              rangerColor={ranger.color}
+              rangerTeam={ranger.team}
+              onCountDown={onCountDown}
+              onCountUp={onCountUp}
+              countDown={countDown}
+              ranger={ranger}
+              setTeam={setTeam}
+              removeRanger={removeRanger}
+            />
+          );
+        })}
       </table>
- 
     </div>
   );
 }

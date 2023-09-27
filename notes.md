@@ -32,7 +32,7 @@ sort the rangers by team after submitting them
 review how to work in branch workflow and merge
 
 make a mobile first view, use percentages to make it work
-check out tailwind
+check out tailwind and bootstrap
 
 don't sort your states, sort the copy of the arrays
 sortedRangers.sort()

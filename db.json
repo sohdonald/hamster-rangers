@@ -167,6 +167,12 @@
       "color": "blue",
       "team": "Clean Towels",
       "id": 27
+    },
+    {
+      "name": "Newbie",
+      "color": "pink",
+      "team": "Fuzzy Pumpkins",
+      "id": 28
     }
   ],
   "megazords": [
