@@ -21,7 +21,7 @@ function handleCountDown() {
 }
 */
 
-function SelectRangers({onCountDown}) {
+function SelectRangers({team}) {
 
  // why is this undefined?, the 'd' was not capitalized
 
@@ -40,7 +40,7 @@ function SelectRangers({onCountDown}) {
     <div>
       {/* we need to display the rangers we selected */}
       <h1>
-        Recruit {onCountDown} more rangers.
+        Recruit {5 - team.length} more rangers.
         {/* how do we make that number dynamic 
         Recruit {countDown} more rangers.*/}
       </h1>

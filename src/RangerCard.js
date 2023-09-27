@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import styles from "./RangerCard.module.css";
+import { isContentEditable } from "@testing-library/user-event/dist/utils";
 // import styles from "./Component.module.css"
 
 function RangerCard({
   rangerColor,
   rangerName,
-  onCountDown,
-  onCountUp,
-  countDown,
   ranger,
   setTeam,
+  team,
   removeRanger,
   rangerTeam,
+  isOnTeam
 }) {
   // seperate useState for counter
 
   // console.log(onCountDown);
   // console.log(onCountUp);
 
-  const [selectRanger, setSelectRanger] = useState("select");
+  // const [selectRanger, setSelectRanger] = useState("select");
   //setSelectRanger is function
   // console.log(selectRanger); // outputs "select"
 
@@ -33,18 +33,16 @@ function RangerCard({
     // if true, then the state changes to "select"
     // false, state changes to "deselect
 
-    if (selectRanger === "select" && countDown >= 1) {
-      onCountDown(); // stops substracting after we reach -1, why?
+    if (!isOnTeam && 5 - team.length >= 1) {
+     // stops substracting after we reach -1, why?
       // onCountdown = countDown - 1
       // 0 - 1 = -1
       setTeam((prev) => {
         return [...prev, ranger];
       });
-      setSelectRanger("deselect");
-    } else if (selectRanger === "deselect") {
-      removeRanger(ranger);
-      setSelectRanger("select");
 
+    } else {
+      removeRanger(ranger);
       // we need to check 2 conditions
       // 1. selectRanger = "deselect"
       // 2. count >= 0
@@ -64,7 +62,6 @@ function RangerCard({
       // have the condition of onCountDown >= 0
       // const countUp =  + 1
       // can't be less than 0
-      onCountUp();
     }
   }
 
@@ -110,7 +107,7 @@ function RangerCard({
       <td>
         <button className="select button" onClick={() => handleSelectRanger()}>
           {/* how do we decrease the number displayed in SelectRangers with this button? */}
-          {selectRanger}
+          {isOnTeam ? "deselect":"select"}
         </button>
       </td>
     </tr>

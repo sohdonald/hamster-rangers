@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import RangerCard from "./RangerCard";
 import Filter from "./Filter";
 
-function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
+function AssembleRangers({ team, setTeam }) {
   // combine all the rangers from rangerRoster into one large array
   // converts the json into something we can work with
   const [rangers, setRangers] = useState([]);
@@ -22,12 +22,12 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
   // so let's just make it one fetch as it will make it easier to retrieve the data we need
 
   const [selectedTeam, setSelectedTeam] = useState("All");
-  
+
   // sort rangers here
   const sortedRangers = [...rangers].sort((rangerA, rangerB) =>
     rangerA.team.localeCompare(rangerB.team)
   );
-  
+
   const rangerFilterArray = sortedRangers.filter((ranger) => {
     if (selectedTeam === "All") {
       return ranger;
@@ -35,8 +35,6 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
       return ranger.team === selectedTeam;
     }
   });
-
-
 
   function handleTeamChange(rangerTeam) {
     setSelectedTeam(rangerTeam);
@@ -57,7 +55,7 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
 
       <h2>Rangers</h2>
       <Filter selectedTeam={selectedTeam} onTeamChange={handleTeamChange} />
-
+      <button onClick={() => setTeam([])}>Dismiss All</button>
       <table style={{ width: "80%" }}>
         <tr>
           <th>Name</th>
@@ -72,12 +70,11 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
               rangerName={ranger.name}
               rangerColor={ranger.color}
               rangerTeam={ranger.team}
-              onCountDown={onCountDown}
-              onCountUp={onCountUp}
-              countDown={countDown}
               ranger={ranger}
               setTeam={setTeam}
+              team={team}
               removeRanger={removeRanger}
+              isOnTeam={team.includes(ranger)}
             />
           );
         })}

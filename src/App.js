@@ -9,30 +9,22 @@ import SummonMegazord from "./SummonMegazord";
 // need to declare countDown state to every component that needs it
 
 function App() {
-  const [countDown, setCountDown] = useState(5);
+  // const [countDown, setCountDown] = useState(5);
   const [team, setTeam] = useState([]);
   // displays 5
   // the number is not displaying
   // this state makes the number of rangers we selected dynamic
-  function handleCountDown() {
-    setCountDown(countDown - 1);
-  }
-
-  function handleCountUp() {
-    setCountDown(countDown + 1);
-  }
+ 
 
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <SelectRangers onCountDown={countDown} />
+          <SelectRangers team={team}/>
           <SummonMegazord team={team} />
           <AssembleRangers
-            onCountDown={handleCountDown}
-            onCountUp={handleCountUp}
-            countDown={countDown}
+
             team={team}
             setTeam={setTeam}
           />
