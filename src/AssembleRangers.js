@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RangerCard from "./RangerCard";
+import Filter from "./Filter";
 
 function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
   // combine all the rangers from rangerRoster into one large array
@@ -22,6 +23,21 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
   // making multiple fetches would make this way more complicated than necessary
   // so let's just make it one fetch as it will make it easier to retrieve the data we need
 
+  const [selectedTeam, setSelectedTeam] = useState("All");
+  const rangerFilterArray = rangers.filter((ranger)=> {
+    if (selectedTeam === "All") {
+      return ranger
+    } else {
+      return ranger.team === selectedTeam
+    }
+  })
+  console.log(rangerFilterArray)
+  // const [selectedColor, setSelectedColor] = useState("All");
+
+  function handleTeamChange (rangerTeam) {
+    setSelectedTeam(rangerTeam)
+  }
+
   return (
     <div>
       {/* should show a bunch of ranger cards for
@@ -36,6 +52,10 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
             rangers.map((ranger)=> {return <RangerCard/>})*/}
 
       <h2>Rangers</h2>
+      <Filter 
+        selectedTeam={selectedTeam}
+        onTeamChange={handleTeamChange}/>
+
       <table style={{width:"80%"}}>
         <tr>
           <th>Name</th>
@@ -43,7 +63,7 @@ function AssembleRangers({ onCountDown, onCountUp, countDown, team, setTeam }) {
           <th>Team</th>
           <th>Select</th>
         </tr>
-        {rangers.map((ranger) => {
+        {rangerFilterArray.map((ranger) => {
         return (
           <RangerCard
             key={ranger.id}

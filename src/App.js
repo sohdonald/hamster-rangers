@@ -28,18 +28,17 @@ function App() {
       <Switch>
         <Route exact path="/">
           <SelectRangers onCountDown={countDown} />
-          <SummonMegazord team= {team}/>
+          <SummonMegazord team={team} />
           <AssembleRangers
             onCountDown={handleCountDown}
             onCountUp={handleCountUp}
             countDown={countDown}
-            team = {team}
-            setTeam = {setTeam}
+            team={team}
+            setTeam={setTeam}
           />
-          
         </Route>
         <Route exact path="/newrangerform">
-            <NewRangerForm />
+          <NewRangerForm />
         </Route>
       </Switch>
     </div>
