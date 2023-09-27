@@ -134,7 +134,7 @@
     },
     {
       "name": "Tom",
-      "color": "pink",
+      "color": "green",
       "team": "Fuzzy Pumpkins",
       "id": 22
     },
@@ -173,30 +173,6 @@
       "color": "pink",
       "team": "Fuzzy Pumpkins",
       "id": 28
-    },
-    {
-      "name": "Donald",
-      "color": "red",
-      "team": "Soggy Pillows",
-      "id": 29
-    },
-    {
-      "name": "Jessie",
-      "color": "yellow",
-      "team": "Fuzzy Pumpkins",
-      "id": 30
-    },
-    {
-      "name": "Bob",
-      "color": "red",
-      "team": "Soggy Pillows",
-      "id": 31
-    },
-    {
-      "name": "Jessie",
-      "color": "red",
-      "team": "Soggy Pillows",
-      "id": 32
     }
   ],
   "megazords": [

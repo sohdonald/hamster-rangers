@@ -5,31 +5,9 @@ when 5 rangers are selected, it checks from an object array of Megazords
 that fulfill the conditions of the SummonBy key
 
 we want to make a bunch of megazords with different conditions
-
-we need to do something like this
-
-const order = 'cheeseburger';
-
-let ingredients;
-
-switch (order) {
-    case 'cheeseburger':
-        ingredients = 'bun, burger, cheese, lettuce, tomato, onion';
-        break;
-    case 'hamburger':
-        ingredients = 'bun, burger, lettuce, tomato, onion';
-        break;
-    case 'malted':
-        ingredients = 'milk, ice cream, malted milk powder';
-        break;
-    default:
-        console.log("Sorry, that's not on the menu right now.");
-        break;
-}
-
 */
 
-import React from "react";
+import React, { useState } from "react";
 
 function SummonMegazord({ team }) {
   // how do we make the value dynamic?
@@ -37,7 +15,6 @@ function SummonMegazord({ team }) {
   /** we need to convert the arrays in rangerColor
  * into string arrays like this
  * rangerColor = ["red", "blue", "yellow", "green", "pink"]
- * [..., rangerColor]
  * 
     how do we create a new array with only the 5 rangers selected?
 */
@@ -45,8 +22,6 @@ function SummonMegazord({ team }) {
   //      ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
   //     ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
   //     ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
-
-  // we can use search based on colors
 
   function handleMegazord() {
     if (team.length === 5) {
@@ -76,12 +51,7 @@ function SummonMegazord({ team }) {
       // rangerColors is currently an array of strings
       // rangerColors combine existing array as a string
       // we want to compare contents of rangerColors to contents of Bloody Banana
-      // for loop by comparing each item
-      //  for ([initialization],[condition],[iteration]) {[loop body]}
-      /** INITIALIZATION is the variable we begin with
-       * CONDITION is the expression evaluated before each pass through the loop, if expression
-       * is true, the statements in the LOOP BODY are executed
-       * ITERATION is the expression executed at the end of each iteration */
+
       /**goal is to return a specific megazord based on colors
        * how do we compare rangerColors with a condition?
        */
@@ -106,12 +76,16 @@ function SummonMegazord({ team }) {
         megazord = "Super Sour";
       } else if (b === 3 && y === 1 && r === 1) {
         megazord = "Boring Suitcase";
-      } else if (p=== 1 && g === 1 && b === 1 && y === 1 && r === 1) {
+      } else if (p === 1 && g === 1 && b === 1 && y === 1 && r === 1) {
         megazord = "Classic Coke";
       } else if (r === 5) {
         megazord = "Promoting Violence";
       } else if (b === 4 && g === 1) {
         megazord = "Invisible Hamster King";
+      } else if (r===1 && b === 3 && p === 1) {
+        megazord = "Cuban Pete";
+      } else if (g === 4 && p === 1) {
+        megazord = "Mighty Pinecone";
       } else {
         megazord = "Cheap Knockoff";
       }
@@ -121,24 +95,23 @@ function SummonMegazord({ team }) {
     }
   }
 
-  // function handleMegazordButton() {
-  //   //console.log("countDown", countDown)
-  //   if (countDown === 0) {
-  //     handleMegazord();
-  //   }
-  // }
+  const [createMegazord, setCreateMegazord] = useState(false);
+
+  function handleMegazordH2() {
+    if (createMegazord === false) {
+      return "Create a Megazord.";
+    } else {
+      return "Here Comes a New Megazord!";
+    }
+  }
 
   return (
     <div>
-      {/* <button onClick={handleMegazordButton}>Summon Megazord</button> */}
-      <h2>Here Comes A New Megazord!</h2>
+      {/* can we do something similar to what we did with NewRangerForm's h2? */}
+      {/* <h2 
+      value = {handleMegazord}
+      onChange={(e) => setCreateMegazord(true)}/> */}
       <h1>{handleMegazord()}</h1>
-      {/* we are really close to figuring this out
-    we know that the handleMegazordButton is working like it should
-    and we are getting ONE of the OPERATIONS from the switch EXECUTED
-     
-    Now we need to figure out how to get the other operations to execute
-     */}
     </div>
   );
 }
@@ -187,5 +160,3 @@ export default SummonMegazord;
  *
  * there's gotta be a way to check and match data that doesn't look confusing
  */
-
-// currently, the Megazord expression's value is static.  We need to make it dynamic
