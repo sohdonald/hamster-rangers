@@ -1,4 +1,4 @@
-/** this is where we will filter the ranger table by team or color*/
+/** this is where we will filter the ranger table by team*/
 import React from "react";
 
 function Filter({ selectedTeam, onTeamChange}) {

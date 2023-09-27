@@ -12,8 +12,11 @@ function NewRangerForm() {
   const [newTeam, setNewTeam] = useState("Soggy Pillows");
   const [newRanger, setNewRanger] = useState("");
 
-  // function handleNewRanger() {
-  // setNewRanger([...rangers, newRanger]);
+  // how do we make the h2, "Bob has been recruited!"
+  // change to say "newName" has been recruited!
+
+// make the text of h2 change from
+// "Recruit a new ranger." to "[newName] has been recruited!"  
 
   function handleSubmit(e) {
     e.preventDefault();

@@ -6,28 +6,21 @@ import NewRangerForm from "./NewRangerForm";
 import NavBar from "./NavBar";
 import SummonMegazord from "./SummonMegazord";
 
-// need to declare countDown state to every component that needs it
-
 function App() {
-  // const [countDown, setCountDown] = useState(5);
   const [team, setTeam] = useState([]);
-  // displays 5
-  // the number is not displaying
-  // this state makes the number of rangers we selected dynamic
- 
+  /** this state makes the number of rangers we selected dynamic.
+   it also checks the colors of the rangers we selected.
+   done by creating an array of rangers that 
+   dynamically changes by which rangers we selected */
 
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <SelectRangers team={team}/>
+          <SelectRangers team={team} />
           <SummonMegazord team={team} />
-          <AssembleRangers
-
-            team={team}
-            setTeam={setTeam}
-          />
+          <AssembleRangers team={team} setTeam={setTeam} />
         </Route>
         <Route exact path="/newrangerform">
           <NewRangerForm />
