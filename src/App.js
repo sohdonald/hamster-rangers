@@ -8,10 +8,11 @@ import SummonMegazord from "./SummonMegazord";
 
 function App() {
   const [team, setTeam] = useState([]);
-  /** this state makes the number of rangers we selected dynamic.
-   it also checks the colors of the rangers we selected.
+  /* this state makes the number of rangers we selected dynamic 
+   and checks the colors of the rangers we selected.
    done by creating an array of rangers that 
-   dynamically changes by which rangers we selected */
+   dynamically changes by the operations performed by the components
+   where team is passed as a prop */
 
   return (
     <div className="App">

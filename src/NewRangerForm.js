@@ -11,12 +11,31 @@ function NewRangerForm() {
   const [newColor, setNewColor] = useState("red");
   const [newTeam, setNewTeam] = useState("Soggy Pillows");
   const [newRanger, setNewRanger] = useState("");
+  const [clickSubmit, setClickSubmit] = useState(false)
 
   // how do we make the h2, "Bob has been recruited!"
   // change to say "newName" has been recruited!
 
 // make the text of h2 change from
-// "Recruit a new ranger." to "[newName] has been recruited!"  
+// "Recruit a new ranger." to "[newName] has been recruited!" after we click submit
+// what do we need to keep track of?
+// if submit button is clicked, clickSubmit is true and "[newName] has been recruited is displayed"
+// if the newName is not equal to the previous name we submitted, it goes back to "recruit a new..."
+// newName != newName
+
+function handleClickSubmit() {
+  setClickSubmit(true)
+}
+
+function handleH2State() {
+if (clickSubmit === false) {
+   return <h2>Recruit a new ranger</h2>
+} else {
+   return <h2>{newName} has been recruited</h2>
+}
+}
+
+console.log(clickSubmit)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,7 +52,10 @@ function NewRangerForm() {
       body: JSON.stringify(newRangerData),
     })
       .then((r) => r.json())
-      .then((rangerSubmit) => setNewRanger(rangerSubmit));
+      .then((rangerSubmit) => {
+        setNewRanger(rangerSubmit)
+      handleClickSubmit()
+   });
   }
 
   return (
@@ -46,7 +68,10 @@ function NewRangerForm() {
             type="text"
             name="name"
             value={newName}
-            onChange={(e) => setNewName(e.target.value)}
+            onChange={(e) => {
+              setNewName(e.target.value)
+              setClickSubmit(false)  
+            }}
           />
         </label>
         <label>
@@ -85,7 +110,7 @@ function NewRangerForm() {
           </select>
         </label>
         <button className={styles.button} type="submit">Recruit</button>
-        <h2>Bob has been recruited!</h2>
+        {handleH2State()}
       </form>
     </div>
   );
