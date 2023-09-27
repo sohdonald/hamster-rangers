@@ -57,12 +57,15 @@ function AssembleRangers({ team, setTeam }) {
       <Filter selectedTeam={selectedTeam} onTeamChange={handleTeamChange} />
       <button onClick={() => setTeam([])}>Dismiss All</button>
       <table style={{ width: "80%" }}>
+        <thead>
         <tr>
           <th>Name</th>
           <th>Color</th>
           <th>Team</th>
           <th>Select</th>
         </tr>
+        </thead>
+        <tbody>
         {rangerFilterArray.map((ranger) => {
           return (
             <RangerCard
@@ -78,6 +81,7 @@ function AssembleRangers({ team, setTeam }) {
             />
           );
         })}
+        </tbody>
       </table>
     </div>
   );
