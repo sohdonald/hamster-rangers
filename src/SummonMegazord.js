@@ -25,7 +25,6 @@ function SummonMegazord({ team }) {
       let g = 0;
       let p = 0;
     
-
       rangerColors.forEach((color) => {
         if (color === "red") {
           r = r + 1;

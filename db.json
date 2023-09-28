@@ -179,6 +179,12 @@
       "color": "yellow",
       "team": "Fuzzy Pumpkins",
       "id": 29
+    },
+    {
+      "name": "Huckster",
+      "color": "green",
+      "team": "Coconut Avengers",
+      "id": 30
     }
   ],
   "megazords": [

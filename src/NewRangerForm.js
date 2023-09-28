@@ -45,7 +45,7 @@ console.log(clickSubmit)
     };
     console.log(newRangerData);
 
-    fetch(`http://localhost:4000/rangers`, {
+    fetch(`https://hamster-rangers.onrender.com/rangers`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newRangerData),

@@ -12,7 +12,7 @@ function AssembleRangers({ team, setTeam }) {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:4000/rangers`)
+    fetch(`https://hamster-rangers.onrender.com/rangers`)
       .then((r) => r.json())
       .then((rangersJson) => setRangers(rangersJson));
     // setRangers set the current state of rangers to rangersJson
