@@ -84,3 +84,36 @@ h3 "recruit 5 more hamsters"
 
 hamsters are displayed in hamster cards
 
+     // rangerColors is currently an array of strings
+      // rangerColors combine existing array as a string
+      // we want to compare contents of rangerColors to contents of Bloody Banana
+
+      /**goal is to return a specific megazord based on colors
+       * how do we compare rangerColors with a condition?
+       */
+      /** if r = 0
+       * then 'red, red, red' = 3r
+       * r keeps track of number of rangers with color = 'red'
+       * we need a way to keep track of r
+
+      need to check each ranger color from rangers object array
+      datatype of rangerColor is a string
+      for each 'red', increase r by +1
+      compare 'red' in colorString
+      colorString is a string
+      rangerColors.forEach((color)=>console.log(color))
+       */
+
+
+ // how do we make the value dynamic?
+
+  /** we need to convert the arrays in rangerColor
+ * into string arrays like this
+ * rangerColor = ["red", "blue", "yellow", "green", "pink"]
+ * 
+    how do we create a new array with only the 5 rangers selected?
+*/
+  // ["red","red","red","yellow","yellow"]: 'Bloody Banana',
+  //      ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
+  //     ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
+  //     ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
