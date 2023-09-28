@@ -7,7 +7,7 @@ that fulfill the conditions of the SummonBy key
 we want to make a bunch of megazords with different conditions
 */
 
-import React, { useState } from "react";
+import React from "react";
 
 function SummonMegazord({ team }) {
   // how do we make the value dynamic?
@@ -25,15 +25,16 @@ function SummonMegazord({ team }) {
 
   function handleMegazord() {
     if (team.length === 5) {
+      let megaMessage = document.getElementById("megaMessage");
+      megaMessage.style.color = "red";
+      megaMessage.textContent = "Here Comes A New Megazord!";
       let rangerColors = team.map((ranger) => ranger.color);
-      let colorString = rangerColors.join(", ");
       let megazord = "calculating megazord";
       let r = 0;
       let y = 0;
       let b = 0;
       let g = 0;
       let p = 0;
-      console.log(colorString);
       rangerColors.forEach((color) => {
         if (color === "red") {
           r = r + 1;
@@ -82,7 +83,7 @@ function SummonMegazord({ team }) {
         megazord = "Promoting Violence";
       } else if (b === 4 && g === 1) {
         megazord = "Invisible Hamster King";
-      } else if (r===1 && b === 3 && p === 1) {
+      } else if (r === 1 && b === 3 && p === 1) {
         megazord = "Cuban Pete";
       } else if (g === 4 && p === 1) {
         megazord = "Mighty Pinecone";
@@ -90,27 +91,14 @@ function SummonMegazord({ team }) {
         megazord = "Cheap Knockoff";
       }
 
-      console.log(megazord);
       return megazord;
-    }
-  }
-
-  const [createMegazord, setCreateMegazord] = useState(false);
-
-  function handleMegazordH2() {
-    if (createMegazord === false) {
-      return "Create a Megazord.";
-    } else {
-      return "Here Comes a New Megazord!";
     }
   }
 
   return (
     <div>
       {/* can we do something similar to what we did with NewRangerForm's h2? */}
-      {/* <h2 
-      value = {handleMegazord}
-      onChange={(e) => setCreateMegazord(true)}/> */}
+      <h2 id="megaMessage">Create a Megazord.</h2>
       <h1>{handleMegazord()}</h1>
     </div>
   );

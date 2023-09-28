@@ -173,6 +173,12 @@
       "color": "pink",
       "team": "Fuzzy Pumpkins",
       "id": 28
+    },
+    {
+      "name": "Gus",
+      "color": "yellow",
+      "team": "Fuzzy Pumpkins",
+      "id": 29
     }
   ],
   "megazords": [
