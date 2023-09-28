@@ -1,21 +1,22 @@
 /* 
-summonMegazord is a button that works only when 5 rangers are selected
-
-when 5 rangers are selected, it checks from an object array of Megazords
-that fulfill the conditions of the SummonBy key
-
+summonMegazord is a component that executes only when 5 rangers are selected
 we want to make a bunch of megazords with different conditions
 */
 
 import React from "react";
 
 function SummonMegazord({ team }) {
- 
+
+  function handleMegaMessage() {
+    if (team.length === 5) {
+      return <h2>Here Comes a New Megazord!</h2>
+    } else {
+      return <h2>Create a Megazord.</h2>
+    }
+  }
+
   function handleMegazord() {
     if (team.length === 5) {
-      let megaMessage = document.getElementById("megaMessage");
-      megaMessage.style.color = "red";
-      megaMessage.textContent = "Here Comes A New Megazord!";
       let rangerColors = team.map((ranger) => ranger.color);
       let megazord = "calculating megazord";
       let r = 0;
@@ -23,6 +24,7 @@ function SummonMegazord({ team }) {
       let b = 0;
       let g = 0;
       let p = 0;
+    
 
       rangerColors.forEach((color) => {
         if (color === "red") {
@@ -61,13 +63,13 @@ function SummonMegazord({ team }) {
       }
 
       return megazord;
-    }
+    } 
   }
 
   return (
     <div>
-      {/* can we do something similar to what we did with NewRangerForm's h2? */}
-      <h2 id="megaMessage">Create A Megazord.</h2>
+      {/* can we do something similar to what we did with NewRangerForm's h2?*/}
+      {handleMegaMessage()}
       <h1>{handleMegazord()}</h1>
     </div>
   );
