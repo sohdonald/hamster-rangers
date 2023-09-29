@@ -5,7 +5,6 @@ function NewRangerForm() {
   const [newName, setNewName] = useState("");
   const [newColor, setNewColor] = useState("red");
   const [newTeam, setNewTeam] = useState("Soggy Pillows");
-  const [newRanger, setNewRanger] = useState("");
   const [clickSubmit, setClickSubmit] = useState(false)
 
 // sometimes get an error that asks for newRanger to be used
@@ -51,8 +50,7 @@ console.log(clickSubmit)
       body: JSON.stringify(newRangerData),
     })
       .then((r) => r.json())
-      .then((rangerSubmit) => {
-        setNewRanger(rangerSubmit)
+      .then(() => {
       handleClickSubmit()
    });
   }

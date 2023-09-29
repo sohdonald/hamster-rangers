@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./RangerCard.module.css";
-import { isContentEditable } from "@testing-library/user-event/dist/utils";
 // import styles from "./Component.module.css"
 
 function RangerCard({
