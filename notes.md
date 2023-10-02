@@ -117,3 +117,8 @@ hamsters are displayed in hamster cards
   //      ["pink","pink","pink","blue","yellow"]: 'Pink Lemonade',
   //     ["yellow","yellow","yellow","red","pink"]: 'Super Sour',
   //     ["blue","blue","blue","yellow","red"]: 'Boring Suitcase',
+
+
+  talk about code,
+  explain how to use the app
+  should be between 1-3 min
