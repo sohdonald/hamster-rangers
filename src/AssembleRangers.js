@@ -23,10 +23,18 @@ function AssembleRangers({ team, setTeam }) {
 
   const [selectedTeam, setSelectedTeam] = useState("All");
 
+// This will change the state of the ranger's color
+  //const [selectedColor, setSelectedColor] = useState("All");
+
   // sort rangers here
   const sortedRangers = [...rangers].sort((rangerA, rangerB) =>
     rangerA.team.localeCompare(rangerB.team)
   );
+
+  // sort color here
+  // const sortedColor = [...rangers].sort((rangerA, rangerB) =>
+  //   rangerA.color.localeCompare(rangerB.color)
+  // );
 
   const rangerFilterArray = sortedRangers.filter((ranger) => {
     // this creates a copy of sortedRangers array and filters it with
@@ -37,6 +45,16 @@ function AssembleRangers({ team, setTeam }) {
       return ranger.team === selectedTeam;
     }
   });
+
+  // const ColorFilterArray = sortedColor.filter((ranger) => {
+  //   // this creates a copy of sortedColor array and filters it with
+  //   // the operation below
+  //   if (selectedTeam === "All") {
+  //     return ranger;
+  //   } else {
+  //     return ranger.color === selectedColor;
+  //   }
+  // });
 
   function handleTeamChange(rangerTeam) {
     setSelectedTeam(rangerTeam);
@@ -49,7 +67,7 @@ function AssembleRangers({ team, setTeam }) {
     <div>
       <h2>Rangers</h2>
       <Filter selectedTeam={selectedTeam} onTeamChange={handleTeamChange} />
-      {/* <ColorFilter/> */}
+      {/* <ColorFilter selectedColor={selectedTeam} onColorChange={handleColorChange}/> */}
       <button onClick={() => setTeam([])}>Dismiss All</button>
       <table style={{ width: "80%" }}>
         <thead>
