@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RangerCard from "./RangerCard";
 import Filter from "./Filter";
+// import ColorFilter from "./ColorFilter";
 
 function AssembleRangers({ team, setTeam }) {
   // combine all the rangers from rangerRoster into one large array
@@ -41,10 +42,14 @@ function AssembleRangers({ team, setTeam }) {
     setSelectedTeam(rangerTeam);
   }
 
+  // function handleColorChange(rangerColor) {
+  // }
+
   return (
     <div>
       <h2>Rangers</h2>
       <Filter selectedTeam={selectedTeam} onTeamChange={handleTeamChange} />
+      {/* <ColorFilter/> */}
       <button onClick={() => setTeam([])}>Dismiss All</button>
       <table style={{ width: "80%" }}>
         <thead>
